@@ -61,6 +61,10 @@ color: #009688;
 .marg-bot30{
     margin-bottom: 30px;
 }
+
+.pad-bot20{
+    padding-bottom: 20px;
+}
 /*Nav styles*/
 .main-nav{
     height: 100px;
@@ -160,6 +164,8 @@ text-align: center;
     height:200px;
     background-color: black;
     color:white;
+    
+    width: 100%;
 }
 
 /*Form section*/
@@ -218,6 +224,11 @@ select{
     margin-left: 20px;
 }
 
+.form-col{
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    
+}
 /*Colors*/
 .white{
     background-color: white;
