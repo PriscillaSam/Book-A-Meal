@@ -98,7 +98,6 @@
 }
 .tbl-header{
     letter-spacing: 1px;
-    background-color:;
 }
 
 tr{
@@ -108,11 +107,7 @@ th,td{
     padding:15px;
 }
 tbody tr:nth-child(odd) {
-    background-color:#FFF59D;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color:;
+    background-color:#FFFF8D;
   }
   
   td .btn{
