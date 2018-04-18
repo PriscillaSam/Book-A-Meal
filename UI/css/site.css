@@ -240,3 +240,7 @@ select{
 .dark{
     background-color: #00695C;
 }
+
+.col-grid{
+    column-count: 3;
+}
