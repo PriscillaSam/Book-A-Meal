@@ -34,3 +34,50 @@
 .col{
     width: 30%;
 }
+
+/*Checkbox*/
+.checkbox-group{
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.checkbox-group input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+.checkbox-group .check:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #009688;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkbox-group input:checked ~ .check:after {
+    display: block;}
+   
+ 
+
