@@ -54,7 +54,9 @@ color: #009688;
 .marg-right20{
     margin-right: 20px;
 }
-
+.marg-right10{
+    margin-right: 10px;
+}
 .marg-left20{
     margin-left: 20px;
 }
@@ -153,12 +155,22 @@ text-align: center;
     color: white;
     border-radius: 3px;
     border:none;
+    cursor: pointer;
 }
 
 .btn-green{
     background-color: #009688;
 }
+.btn-red{
+    background-color: #F44336;
+}
 
+.btn-green:hover{
+    background-color:#00897B;
+}
+.btn-red:hover{
+    background-color: #E53935;
+}
 /*page footer styles*/
 .page-footer {
     height:200px;

@@ -88,11 +88,36 @@
 
 /*Table styling*/
 .tbl{
+    width: 100%;
+    table-layout: fixed;
+
     border-spacing: 10px;
-    border-collapse: separate;
     
+    border-collapse: collapse;
+    
+}
+.tbl-header{
+    letter-spacing: 1px;
+    background-color:;
 }
 
 tr{
-    width: 100%;
+    text-align: center;
 }
+th,td{
+    padding:15px;
+}
+tbody tr:nth-child(odd) {
+    background-color:#FFF59D;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color:;
+  }
+  
+  td .btn{
+      padding:2px 5px;
+      font-size: 13px;
+  }
+
+ 
