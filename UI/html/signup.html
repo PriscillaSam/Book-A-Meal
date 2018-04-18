@@ -30,32 +30,38 @@
                 <div class="inner-wrapper">
                         <div class="panel white">
                             <div class="hold">
-                                <h2 class="panel-title left">Sign Up</h2>
-                                <h1 id="nav-title" class="right">                
+                                <h2 class="panel-title left" style="width: 50%">Sign Up</h2>
+                                <h1 id="nav-title" class="right" style="width: 50%">                
                                         Book<span>-A-</span>Meal               
                                 </h1> 
-                                <hr style="clear: both;margin-top: 20px">
 
                             </div>
-                                
+                            <hr>
+    
                                 <!--Beginning of form-->
-                                <form action="post" enctype="text/plain" name="signup">
-                                    <div class="form-group">
+                            <form action="post" enctype="text/plain" name="signup">
+                                <div class="form-group">
+                                        <div class="form-input">
+                                                <input type="text" name="Name" value="" placeholder="Enter Your Name" class="form-control"/>
+                                            </div>
                                             <div class="form-input">
-                                                    <input type="text" name="Name" value="" placeholder="Enter Your Name" />
-                                                </div>
-                                                <div class="form-input">
-                                                     <input type="text" name="Email" value="" placeholder="Enter Your Email"/>
-                                                </div>
-                                                <div class="form-input">
-                                                     <input type="text" name="Password" value="" placeholder="Enter Your Password"/>
-                                                </div>
-                                                <button class="btn btn-green">Submit</button>
+                                                    <input type="text" name="Email" value="" placeholder="Enter Your Email" class="form-control"/>
+                                            </div>
+                                            <div class="form-input">
+                                                    <input type="text" name="Password" value="" placeholder="Enter Your Password" class="form-control"/>
+                                            </div>
+                                            <div class="form-input">
+                                                <select id="UserType" name="UserType" class="form-control">
+                                                    <option value="">Select User Type</option>
+                                                    <option value="Customer">Customer</option>
+                                                    <option value="Caterer">Caterer</option>                                                </select>
+                                            </div>
+                                            <button class="btn btn-green">Submit</button>
 
-                                    </div>
-                                    
-            
-                                </form>
+                                </div>
+                                
+        
+                            </form>
                             </div>
                 </div>
                

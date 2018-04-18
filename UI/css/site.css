@@ -116,6 +116,7 @@ text-align: center;
 
 /*Button styles*/
 .btn{
+    min-width: 100px;
     padding: 7px;
     color: white;
     border-radius: 3px;
@@ -165,7 +166,21 @@ text-align: center;
 
 }
 
-input[type=text] {
+/* input[type=text] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    border: 1px solid rgb(221, 214, 214);
+} */
+
+select{
+    color: grey;
+}
+
+.form-control{
     width: 100%;
     padding: 10px 20px;
     margin: 5px 0;
@@ -180,8 +195,7 @@ input[type=text] {
 }
 
 .hold{
-    margin-top: 30px;
-    margin-bottom: 10px;
+    clear: both;
 }
 .white{
     background-color: white;
