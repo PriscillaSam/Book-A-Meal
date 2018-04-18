@@ -25,7 +25,9 @@ li{
 a{
     text-decoration: none;
 }
-
+hr{
+    background-color: white;
+}
 .nav-link{
     color:#BDBDBD;
 
@@ -40,13 +42,14 @@ span{
 }
 /*Nav styles*/
 .main-nav{
-    height: 50px;
+    height: 100px;
     background-color: white;
     box-shadow: #eee 0px 1px 1px;
     margin-bottom: 10px;
 }
 .nav-group{
-    margin: 50px auto;    
+    padding-top:50px;
+    margin: 0px auto;    
     width: 70%;
 }
 .center{
@@ -60,14 +63,16 @@ text-align: center;
 }
 
 /*Banner styles*/
-.banner{
-    
+.banner{        
     position: relative;
     height:100%;
-    background-image: url('../img/banner-imgg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.welcome-banner{
+    background-image: url('../img/banner-imgg.jpg');
+
 }
 .responsive{
     width: 100%;
@@ -97,6 +102,10 @@ text-align: center;
     margin-bottom: 15px;
     color: whi;
 }
+
+.mid{
+    margin:0 auto;
+}
 .left{
     float: left;
 }
@@ -122,4 +131,58 @@ text-align: center;
     height:200px;
     background-color: black;
     color:white;
+}
+
+/*Form section*/
+.form-banner{
+    background-image: url('../img/login.jpg');
+
+}
+.form-wrapper{
+    background: rgba(12, 14, 12, 0.3);
+    width: 100%;
+    height: 100%;
+}
+
+.panel{
+    border-radius: 5px;
+    padding: 20px;
+}
+.inner-wrapper{
+    position: absolute;
+    top:20%;
+    left:40%;
+
+    width: 30%;
+
+}
+
+.form-input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    border: 1px solid rgb(221, 214, 214);
+}
+
+.form-group{
+    margin-left: 20px;
+}
+
+.hold{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.white{
+    background-color: white;
 }
