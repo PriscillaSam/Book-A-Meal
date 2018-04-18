@@ -41,6 +41,13 @@ color: #009688;
 }
 
 /*heights*/
+.marg-top10{
+    margin-top: 10px;
+
+}
+.marg-top20{
+    margin-top: 20px;
+}
 .marg-top50{
     margin-top: 50px;
 }
@@ -71,6 +78,9 @@ text-align: center;
 }
 #nav-title{
     color:rgb(51, 50, 50);
+}
+.active{
+    color: #009688;
 }
 
 /*Banner styles*/
@@ -138,7 +148,7 @@ text-align: center;
     padding: 7px;
     color: white;
     border-radius: 3px;
-    border: 1px solid grey;
+    border:none;
 }
 
 .btn-green{
