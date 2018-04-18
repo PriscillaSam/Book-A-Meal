@@ -4,6 +4,7 @@
     url('Open_sans.woff') format('woff')
 }
 
+/*General styles*/
 body,
 h1,
 h2,
@@ -16,17 +17,20 @@ p,a, ul,li{
     padding: 0;
     font-family:"Open sans";
 }
+a{
+    text-decoration: none;
+}
+span{
+    color: #009688;
+    margin:0 3px;
+}
+li{
+    list-style: none;
+}
 /*Ul styles*/
 .list-item{
   display: inline;
  margin-right: 20px;
-}
-
-a{
-    text-decoration: none;
-}
-hr{
-    background-color: white;
 }
 .nav-link{
     color:#BDBDBD;
@@ -36,9 +40,19 @@ hr{
 color: #009688;
 }
 
-span{
-    color: #009688;
-    margin:0 3px;
+/*heights*/
+.marg-top50{
+    margin-top: 50px;
+}
+.marg-right20{
+    margin-right: 20px;
+}
+
+.marg-left20{
+    margin-left: 20px;
+}
+.marg-bot30{
+    margin-bottom: 30px;
 }
 /*Nav styles*/
 .main-nav{
@@ -56,16 +70,11 @@ span{
 text-align: center;
 }
 #nav-title{
-}
-.nav-group{
-}
-#nav-title{
     color:rgb(51, 50, 50);
 }
 
 /*Banner styles*/
 .banner{        
-    position: relative;
     height:100%;
     background-size: cover;
     background-position: center;
@@ -82,13 +91,21 @@ text-align: center;
     border-radius: 5px;
     border:1px dashed #eee;
     width: 50%;
-    position: absolute;
     top:30%;
     left:30%;
 
     height: 200px;
     background: rgba(227, 231, 228, 0.3);
 }
+
+.abs-pos{
+    position: absolute;
+
+}
+.rel-pos{
+    position: relative;
+}
+
 .banner-text{
     padding: 20px;
     color:white;
@@ -136,6 +153,9 @@ text-align: center;
 }
 
 /*Form section*/
+.form-title{
+    color:#37474F;
+}
 .form-banner{
     background-image: url('../img/login.jpg');
 
