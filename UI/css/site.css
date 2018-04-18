@@ -17,9 +17,9 @@ p,a, ul,li{
     font-family:"Open sans";
 }
 /*Ul styles*/
-li{
+.list-item{
   display: inline;
-     
+ margin-right: 20px;
 }
 
 a{
@@ -60,6 +60,7 @@ text-align: center;
 .nav-group{
 }
 #nav-title{
+    color:rgb(51, 50, 50);
 }
 
 /*Banner styles*/
@@ -165,16 +166,6 @@ text-align: center;
 
 
 }
-
-/* input[type=text] {
-    width: 100%;
-    padding: 10px 20px;
-    margin: 5px 0;
-    box-sizing: border-box;
-
-    border-radius: 3px;
-    border: 1px solid rgb(221, 214, 214);
-} */
 
 select{
     color: grey;
