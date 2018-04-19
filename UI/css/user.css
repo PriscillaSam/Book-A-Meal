@@ -104,13 +104,20 @@
 tr{
     text-align: center;
 }
+
 th,td{
     padding:15px;
 }
 tbody tr:nth-child(odd) {
     background-color:#FFF176;
   }
-  
+  tbody tr:nth-child(even) {
+    background-color:#FFFF8D;
+  }
+tbody tr:hover{
+    background-color: white;
+    
+}
   td .btn{
       padding:2px 5px;
       font-size: 13px;
