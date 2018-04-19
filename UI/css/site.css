@@ -210,18 +210,14 @@ text-align: center;
 
 }
 
+select{
+    color: grey;
+}
 .form-input{
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-
-
 }
-
-select{
-    color: grey;
-}
-
 .form-control{
     width: 100%;
     padding: 10px 20px;
@@ -251,6 +247,13 @@ select{
 }
 .dark{
     background-color: #00695C;
+}
+.med-text {
+    font-size: 18px;
+}
+
+.text-green{
+    color:#009688;
 }
 
 .col-grid{
