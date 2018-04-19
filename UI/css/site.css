@@ -162,6 +162,12 @@ text-align: center;
     cursor: pointer;
 }
 
+.btn-outline-green:hover{
+    background-color: #009688;
+    color: white;
+
+}
+
 .btn-green{
     background-color: #009688;
 }
