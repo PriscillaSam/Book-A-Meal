@@ -38,7 +38,7 @@
                     </li>
                     <li class="side-nav-link center">
                         <a href="orders.html" class="active nav-link">
-                            View Meal Orders
+                                Today's Orders
                         </a>
                     </li>
                     
@@ -69,53 +69,72 @@
                         </div>
                     </div>
                     <div class="panel white marg-top20">
+                            <div class="marg-bot30">
+
+                                <form>
+                                    <p>Filter by date</p>
+                                    <input type="date" class="form-control col" placeholder="popp" >
+                                    <button class="btn btn-green">Filter</button>
+                                </form>
+                            </div>
                             <table class="tbl">
                                     <thead class="tbl-header"> 
                                         <tr>  
-                                            <th>Date</th>                                          
-                                            <th>Meal Title</th>
+                                            <th>OrderId</th>
+                                            <th>Date</th> 
+                                            <th>Customer Email</th>                                         
+                                            <th>Meal</th>
                                             <th>Price (&#8358;)</th>
                                             <th>Quantity</th>
-                                            <th></th>
+                                            <th>Total(&#8358;)</th>
                                         </tr>
                                     </thead>
                                     <tbody class="tbl-body">
-                                        <tr >
+                                        <tr>
+                                            <td>1</td>
                                             <td>Wednesday 18th, April</td>
+                                            <td><a href="mailto:customeremail" class="tbl-email">sample@gmail.com</a></td>
                                             <td>Plaintain pottage</td>
                                             <td>&#8358;1,500</td>
                                             <td>3</td>
                                             <td>
-                                                <a href="" class="btn btn-red">View Details</a>
+                                                &#8358;4,500
                                             </td>
                                           
                                         </tr>
                                   
                                         <tr>
+                                            <td>2</td>
                                             <td>Wednesday 18th, April</td>
+                                            <td><a href="mailto:customeremail" class="tbl-email">sample@gmail.com</a></td>
                                             <td>Spaghetti and Meat balls</td>
                                             <td>&#8358;2,500</td>                                          
                                             <td>5</td>
                                             <td>
-                                                <a href="" class="btn btn-red">View Details</a>
+                                                &#8358;7,500
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>3</td>
                                             <td>Wednesday 18th, April</td>
+                                            <td><a href="mailto:customeremail" class="tbl-email">user@gmail.com</a></td>
                                             <td>Vegetable soup and semovita</td>
                                             <td>&#8358;2,000</td>                                            
                                             <td>1</td>
-                                            <td>
-                                                <a href="" class="btn btn-red">View Details</a>
-                                            </td>
+                                            <td>&#8358;2,000</td>
+                                           
                                         </tr>
                                         <tr>
+                                            <td>4</td>
                                             <td>Wednesday 18th, April</td>
+                                            <td>
+                                                <a href="mailto:customeremail" class="tbl-email">sample@gmail.com</a>
+                                            </td>
                                             <td>Chicken Nuggets</td>
                                             <td>&#8358;1,500</td>
                                             <td>3</td>
                                             <td>
-                                                <a href="" class="btn btn-red">View Details</a>
+                                                &#8358;4,500
                                             </td>
                                            
                                         </tr>

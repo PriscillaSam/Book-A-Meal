@@ -78,8 +78,7 @@
 
 .checkbox-group input:checked ~ .check:after {
     display: block;}
-   
- 
+
     /**/
 .pad20{
     padding-left: 20px;
@@ -107,6 +106,7 @@ tr{
 
 th, td{
     padding:10px;
+    font-size: 14px;
 }
 .tbl tbody tr:nth-child(odd) {
     background-color:#FFF176;
@@ -127,5 +127,12 @@ th, td{
     padding: 5px;    
 }
 
+.tbl-email{
+    color: black;
+}
+
+.tbl-email:hover{
+    text-decoration-line: underline;
+}
 
  
