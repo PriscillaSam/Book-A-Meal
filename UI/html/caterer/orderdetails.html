@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order Details | Book-A-Meal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user.css" />
+
+</head>
+<body>
+  <section>
+      <div class="row">
+          <!--Side navigation starts here-->
+          <div class="side-bar white marg-right20 pad-bot20">
+              <div>
+                <h1 id="" class="center marg-top50"> 
+                    <a href="../index.html" id="nav-title">
+                    Book<span>-A-</span>Meal               
+
+                    </a>               
+                </h1> 
+                <hr>
+              </div>
+              <div class="side-nav">
+                <ul>
+                    <li class="side-nav-link center">
+                        <a href="addmeal.html" class="nav-link">
+                            Add A Meal
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                        <a href="menu_setup.html" class="nav-link">
+                            Setup Menu
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                        <a href="orders.html" class="active nav-link">
+                                Today's Orders
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                        <a href="orderhistory.html" class="nav-link">
+                            Order History
+                        </a>
+                     </li>
+                    <li class="side-nav-link center">
+                            <a href="managemeals.html" class="nav-link">
+                                Manage Meal Options
+                            </a>
+                        </li>
+                    <li class="side-nav-link center">
+                        <a href="" class="nav-link">
+                          Log out  
+                
+                        </a>
+                    </li>
+                </ul>
+              </div>
+               
+            </div><!--End of side navigation-->
+             <!--Beginning of main section-->
+             <div class="main-section pad-bot20 pad20">
+                <div class="wrapper">
+                    <div class="panel white">
+                            <div class="" >
+                                <h1 class="panel-title left">
+                                        Today's Orders(Details)
+                                    </h1>
+                                <h2 class="right text-green" ><em>Wednesday 18th, April</em></h2>
+                                <p class="clear"></p>
+                             </div>
+                    </div>
+                    <div class="panel white marg-top20">
+                        <div class="col marg-bot30">
+                            <form action="post">
+                                <p>Filter by Meal Type</p>
+                                <select id="UserType" name="UserType" class="form-control">
+                                        <option value="">Select Meal Type</option>
+                                        <option value="Breakfast">Breakfast</option>
+                                        <option value="Lunch">Lunch</option> 
+                                        <option value="Dinner">Dinner</option>
+                                </select>                               
+                                 <button class="btn btn-green">Filter</button>
+                            </form>
+                        </div>
+                         
+                            <table class="tbl">
+                                    <thead class="tbl-header"> 
+                                        <tr>                                              
+                                            <th>Customer Email</th>   
+                                            <th>Meal Type</th>                                      
+                                            <th>Meal</th>
+                                            <th>Price (&#8358;)</th>
+                                            <th>Quantity</th>
+                                            
+                                            <th>Total(&#8358;)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbl-body">
+                                        <tr>                                          
+                                            <td><a href="mailto:customeremail" class="tbl-email">sample@gmail.com</a></td>
+                                            <td>Breakfast</td>
+                                            <td>Plaintain pottage</td>
+                                            <td>&#8358;1,500</td>
+                                            <td>3</td>
+                                            <td>
+                                                &#8358;4,500
+                                            </td>
+                                          
+                                        </tr>
+                                  
+                                        <tr>
+                                        
+                                            <td><a href="mailto:customeremail" class="tbl-email">sample@gmail.com</a></td>
+                                            <td>Lunch</td>
+                                            <td>Spaghetti and Meat balls</td>
+                                            <td>&#8358;2,500</td>                                          
+                                            <td>5</td>
+                                            <td>
+                                                &#8358;7,500
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                         
+                                            <td><a href="mailto:customeremail" class="tbl-email">user@gmail.com</a></td>
+                                            <td>Breakfast</td>
+                                            <td>Vegetable soup and semovita</td>
+                                            <td>&#8358;2,000</td>                                            
+                                            <td>1</td>
+                                            <td>&#8358;2,000</td>
+                                           
+                                        </tr>
+                                        <tr>                                            
+                                            <td>
+                                                <a href="mailto:customeremail" class="tbl-email">sample@gmail.com</a>
+                                            </td>
+                                            <td>Dinner</td>
+                                            <td>Chicken Nuggets</td>
+                                            <td>&#8358;1,500</td>
+                                            <td>3</td>
+                                            <td>
+                                                &#8358;4,500
+                                            </td>
+                                           
+                                        </tr>
+                                    </tbody>                                  
+                                </table>
+                                
+                             
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="../../js/main.js"></script>
+
+</body>
+</html>
+
