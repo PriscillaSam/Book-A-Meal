@@ -92,7 +92,8 @@
     table-layout: fixed;
 
     border-spacing: 10px;
-    
+    border: 1px solid #eee;
+
     border-collapse: collapse;
     
 }
@@ -107,7 +108,7 @@ th,td{
     padding:15px;
 }
 tbody tr:nth-child(odd) {
-    background-color:#FFFF8D;
+    background-color:#FFF176;
   }
   
   td .btn{
