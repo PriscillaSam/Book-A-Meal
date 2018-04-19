@@ -184,8 +184,8 @@ text-align: center;
 /*page footer styles*/
 .page-footer {
     height:200px;
-    background-color: black;
-    color:white;
+    background-color: white;
+    color:#00695C;
     
     width: 100%;
 }
@@ -257,6 +257,9 @@ select{
 }
 .dark{
     background-color: #00695C;
+}
+.red{
+    background-color: #F4511E;
 }
 .med-text {
     font-size: 18px;

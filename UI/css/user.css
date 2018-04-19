@@ -4,7 +4,7 @@
 
 .side-bar{
     width: 20%;
-    
+  
 }
 .side-bar ul{
     margin-top: 30px;
@@ -105,16 +105,16 @@ tr{
     text-align: center;
 }
 
-th,td{
-    padding:15px;
+th, td{
+    padding:10px;
 }
-tbody tr:nth-child(odd) {
+.tbl tbody tr:nth-child(odd) {
     background-color:#FFF176;
   }
-  tbody tr:nth-child(even) {
+ .tbl tbody tr:nth-child(even) {
     background-color:#FFFF8D;
   }
-tbody tr:hover{
+.tbl tbody tr:hover{
     background-color: white;
     
 }
@@ -122,5 +122,10 @@ tbody tr:hover{
       padding:2px 5px;
       font-size: 13px;
   }
+.p-title{
+    border: 1px solid #eee;
+    padding: 5px;    
+}
+
 
  
