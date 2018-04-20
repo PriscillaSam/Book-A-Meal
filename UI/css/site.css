@@ -108,7 +108,7 @@ text-align: center;
     border:1px dashed #eee;
     width: 50%;
     top:30%;
-    left:30%;
+    left:25%;
 
     height: 200px;
     background: rgba(227, 231, 228, 0.3);
@@ -183,11 +183,15 @@ text-align: center;
 }
 /*page footer styles*/
 .page-footer {
-    height:200px;
+    height:100px;
     background-color: white;
     color:#00695C;
     
     width: 100%;
+}
+
+.foot{
+    border-top:1px solid #eee;
 }
 
 /*Form section*/
@@ -214,7 +218,7 @@ text-align: center;
 .inner-wrapper{
     position: absolute;
     top:20%;
-    left:40%;
+    left:35%;
 
     width: 30%;
 
