@@ -1,5 +1,5 @@
 # Book-A-Meal
----
+
 ## Description
 
 Book-A-Meal is an application that enables customers to interact directly with food vendors. The food vendors sets up food menus and the customer has a variety of options to choose from and make orders. The food vendors are kept in the know of what their customers love to eat.
