@@ -265,6 +265,9 @@ select{
 .red{
     background-color: #F4511E;
 }
+.blue{
+    background-color: #283593;
+}
 .med-text {
     font-size: 18px;
 }
