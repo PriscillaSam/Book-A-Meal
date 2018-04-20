@@ -6,12 +6,34 @@
 //  });
 
 //Display date
-var dateHolder = document.querySelector('#js-date'); 
+const delBtn = document.querySelectorAll('.delete');
+const dateHolder = document.querySelector('#js-date'); 
+
+
+const deleteTableRow = () => {
+
+    
+};
+
+delBtn.forEach((item) => {
+
+    item.addEventListener('click', () => {
+
+      if(confirm('Are you sure you want to remove this meal option')) {
+
+        deleteTableRow();
+      }
+      
+  });
+
+  
+});
+
 
 //Function to format date
 const formatDate = (date) => {
 
-    var months = [
+    const months = [
       "January", "February", "March",
       "April", "May", "June", "July",
       "August", "September", "October",
@@ -23,12 +45,13 @@ const formatDate = (date) => {
          "Thursday", "Friday","Saturday",          
     ];
 
-    var dayIndex = date.getDay();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
+    const dayIndex = date.getDay();
+    const monthIndex = date.getMonth();
+    const year = date.getFullYear();
   
     return days[dayIndex] + ' ' + months[monthIndex] + ', ' + year;
   };
 
-var today = new Date();
+const today = new Date();
 dateHolder.innerHTML = formatDate(today);
+
