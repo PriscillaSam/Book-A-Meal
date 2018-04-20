@@ -66,7 +66,7 @@
                 <div class="panel white marg-top20">
                         <!--Menu cards start here-->
                     <div class="marg-bot30 col">
-                        <select id="UserType" name="MealType" class="form-control">
+                        <select id="MealType" name="MealType" class="form-control">
                                 <option value="">Select Meal Type</option>
                                 <option value="Breakfast">Breakfast</option>
                                 <option value="Lunch">Lunch</option> 
@@ -110,7 +110,7 @@
 
                     <div class="order-form marg-top20">
                         <div class="form-col col2 pad20">
-                            <p class="center marg-top20">Order for Breakfast</p>
+                            <p class="center marg-top20" id="tbl-title">Your Order</p>
                             <hr>
                             <div class="marg-top20">
                                <table class="responsive">
@@ -151,7 +151,6 @@
                                            <th>Price</th>
                                            <th>
                                             <button class="btn btn-green">Place Order</button>
-
                                            </th>
                                        </tr>
                                    </tfoot>
@@ -170,6 +169,7 @@
 
 
         </div>
+        <script src="../../js/table.js"></script>
     <script src="../../js/main.js"></script>
     </section>
     <footer class="foot">

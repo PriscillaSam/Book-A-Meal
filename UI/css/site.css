@@ -280,3 +280,7 @@ select{
 .col-grid{
     column-count: 3;
 }
+
+.hidden{
+    visibility: hidden;
+}
