@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order History | Book-A-Meal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user.css" />
+
+</head>
+<body>
+  <section>
+      <div class="row">
+          <!--Side navigation starts here-->
+          <div class="side-bar white marg-right20 pad-bot20">
+              <div>
+                <h1 id="" class="center marg-top50"> 
+                    <a href="../index.html" id="nav-title">
+                    Book<span>-A-</span>Meal               
+
+                    </a>               
+                </h1> 
+                <hr>
+              </div>
+              <div class="side-nav">
+                <ul>
+                    <li class="side-nav-link center">
+                            <a href="menu.html" class="nav-link">
+                                Menu
+                            </a>
+                        </li>
+                    <li class="side-nav-link center">
+                        <a href="" class="active nav-link">
+                            Your Orders
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                        <a href="../login.html" class="nav-link">
+                            Log out  
+                
+                        </a>
+                    </li>
+                </ul>
+              </div>
+               
+            </div><!--End of side navigation-->
+             <!--Beginning of main section-->
+             <div class="main-section pad-bot20 pad20">
+                <div class="wrapper">
+                    <div class="panel white">
+                        <div class="" >
+                            <h1 class="panel-title">
+                               Your Order History
+                            </h1>
+                          
+                        </div>
+                    </div>
+                    <div class="panel white marg-top20">
+                            <div class="marg-bot30">
+
+                                <form>
+                                    <p>Filter by date</p>
+                                    <input type="date" class="form-control col" placeholder="popp" >
+                                    <button class="btn btn-green">Filter</button>
+                                </form>
+                            </div>
+                            <table class="tbl">
+                                    <thead class="tbl-header"> 
+                                        <tr>  
+                                            <th>OrderId</th>
+                                            <th>Date</th>
+                                            <th>Meal Type</th> 
+                                            <th>Meal</th>
+                                            <th>Price (&#8358;)</th>
+                                            <th>Quantity</th>
+                                            <th>Total(&#8358;)</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbl-body">
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Wednesday 18th, April</td>
+                                            <td>Breakfast</td>
+                                            <td>Plaintain pottage</td>
+                                            <td>&#8358;1,500</td>
+                                            <td>3</td>
+                                            <td>
+                                                &#8358;4,500
+                                            </td>
+                                            <td>
+                                                <a href="edit.html" class="btn btn-green marg-right10">Edit</a>
+
+                                            </td>
+                                          
+                                        </tr>
+                                  
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Wednesday 18th, April</td>
+                                            <td>Lunch</td>
+                                            <td>Spaghetti and Meat balls</td>
+                                            <td>&#8358;2,500</td>                                          
+                                            <td>5</td>
+                                            <td>
+                                                &#8358;7,500
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Wednesday 18th, April</td>
+                                            <td>Breakfast</td>
+                                            <td>Vegetable soup and semovita</td>
+                                            <td>&#8358;2,000</td>                                            
+                                            <td>1</td>
+                                            <td>&#8358;2,000</td>
+                                            <td></td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Wednesday 18th, April</td>
+                                            <td>Dinner</td>
+                                            <td>Chicken Nuggets</td>
+                                            <td>&#8358;1,500</td>
+                                            <td>3</td>
+                                            <td>
+                                                &#8358;4,500
+                                            </td>
+                                           <td></td>
+                                        </tr>
+                                    </tbody>                                  
+                                </table>
+                                
+                             
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="foot ">        
+            <div class="page-footer">
+                <p class="center marg-top50">Copyright 2018</p>
+            </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+
+</body>
+</html>
+
