@@ -125,6 +125,7 @@ text-align: center;
 .banner-text{
     padding: 20px;
     color:white;
+    
 }
 .banner-text h2{
     font-size: 70px;
@@ -134,7 +135,7 @@ text-align: center;
 .banner-content p{
     font-size: 20px;
     margin-bottom: 15px;
-    color: whi;
+    color: white;
 }
 
 .mid{

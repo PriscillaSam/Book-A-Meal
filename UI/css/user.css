@@ -46,6 +46,9 @@
     width: 30%;
 }
 
+.col2{
+    width: 60%;
+}
 /*Checkbox*/
 .checkbox-group{
     display: block;

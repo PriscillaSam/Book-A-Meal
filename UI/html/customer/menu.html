@@ -21,7 +21,7 @@
                     Book<span>-A-</span>Meal               
 
                     </a>  
-                    <span class="center red user-label"><a href="menu.html">Customer</a></span> 
+                    <span class="center red user-label"><a href="home.html">Customer</a></span> 
              
                 </h1> 
                 <hr>
@@ -51,125 +51,131 @@
 
           </div><!--End of side navigation-->
 
-          <div class="main-section pad-bot20">
-              <div class="img-section rel-pos">
-                    <img src="../../img/coffee.jpg" class="responsive">
-                    <div class="abs-pos title-wrapper responsive">
-                        <p class="banner-title center">Good Morning Priscilla</p>
+          <div class="main-section pad-bot20 pad20">
+            <div class="wrapper">
+                <div class="panel white">
+                    <div class="" >
+                        <h1 class="panel-title left">
+                                Today's Menu
+                            </h1>
+                        <h2 class="right text-green" ><em id="js-date"></em></h2>
+                        <p class="clear"></p>
                     </div>
-              </div>
-            
-              <!--Today at a glance-->
-              <div class="pad20">
-                <p class="marg-top20 text-green med-text">Today at a glance:</p>
-                <div class="row ">
-                    <div class="panel white col marg-right20 center">                        
-                        <h3 class="panel-title">
-                            Most Ordered
-                        </h3>
-                        <hr>
-                        <p class="text-green"><em>Efo riro and Pounded Yam</em></p>
-                    </div>
-                    <div class="panel white col marg-right20 center">
-                        <h3 class="panel-title">
-                         Your Latest Order
-                        </h3>
-                        <hr>
-
-                        <p class="text-green"><em>2 servings of Chicken salad and chips</em></p>
-
-                    </div> 
-                    <div class="panel white col center">
-                        <h3 class="panel-title">
-                            Highest Cost
-                        </h3>
-                        <hr>
-                        <p class="text-green"><em>Bucket of Chicken @ &#8358;10,000</em></p>
-                    </div>
-                </div>  
-               
-            </div><!--End-->
-            <div class="marg-top20">
-
-                <img src="../../img/menu.jpg" class="responsive" />
-            </div>
-            <div  class="pad20">                
-                <div class="panel white marg-top20">                        
-                    <h1 class="panel-title left">
-                            Today's Menu
-                        </h1>
-                        <h2 class="right text-green" ><em>Wednesday 18th, April</em></h2>
-                        <hr class="clear">
-            
                 </div>
-                <!--Menu starts here-->
-                <div class="panel white marg-top20">                    
-                    <div class="panel form-col ">
-                        <h4 class="">Select menu</h4>
-                                
-                        <select id="UserType" name="UserType" class="form-control">
+
+                <div class="panel white marg-top20">
+                        <!--Menu cards start here-->
+                    <div class="marg-bot30 col">
+                        <select id="UserType" name="MealType" class="form-control">
                                 <option value="">Select Meal Type</option>
                                 <option value="Breakfast">Breakfast</option>
                                 <option value="Lunch">Lunch</option> 
                                 <option value="Dinner">Dinner</option>
                         </select>
-                        <p class="marg-top10">Select meal options</p>
-                        <div class="marg-top10 marg-bot30">  
-                            <div class="col-grid">
-                                <div class="">
-                                    <label class="checkbox-group">
-                                            <input type="checkbox" />
-                                            Chicken Salad
-                                            <span class="check"></span>
-                                    </label>
-                                    <label class="checkbox-group">
-                                            <input type="checkbox" />
-                                            Oha soup and pounded yam
-                                            <span class="check"></span>
-                                    </label>
-                                    <label class="checkbox-group">
-                                        <input type="checkbox" />
-                                        Chips, chicken and Ketchup
-                                        <span class="check"></span>
-                                    </label>
-                                </div>
-                                <div class="">
-                                    <label class="checkbox-group">
-                                            <input type="checkbox" />
-                                            Crab sauce and peppered rice
-                                            <span class="check"></span>
-                                    </label> 
-                                    <label class="checkbox-group">
-                                            <input type="checkbox" />
-                                            Vegetable Soup and Semovita
-                                            <span class="check"></span>
-                                    </label>
-                                    <label class="checkbox-group">
-                                        <input type="checkbox" />
-                                        Spaghetti and Chicken sauce
-                                        <span class="check"></span>
-                                    </label>
-                                </div>                                                         
-                            </div> 
-                            <div class="marg-top10">
-                                <button class="btn btn-green">Place Order</button> 
-                            </div>           
-                            <!--End-->          
-                            
-                                        
+                    </div>                   
+                   
+                    <div class="row marg-bot30">
+                        <div class="col form-col marg-right20">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+
                         </div>
+                        <div class="col form-col marg-right20 pad-bot20">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+                        </div>
+                        <div class="col form-col">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="order-form marg-top20">
+                        <div class="form-col col2 pad20">
+                            <p class="center marg-top20">Order for Breakfast</p>
+                            <hr>
+                            <div class="marg-top20">
+                               <table class="responsive">
+                                   <thead>
+                                       <tr>
+                                           <th>Meal</th>
+                                           <th>Price Per serving</th>
+                                           <th>No Of Servings</th>
+                                           <th></th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                     
+                                    <tr>
+                                        <td>Vegetable soup and efo riro</td>
+                                        <td>Price</td>
+                                        <td>
+                                            <input type="number" class="form-control"/> 
+                                        </td>
+                                        <td>
+                                            <a href="" class="btn btn-red">Remove</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vegetable soup and efo riro</td>
+                                        <td>Price</td>
+                                        <td>
+                                            <input type="number" class="form-control"/> 
+                                        </td>
+                                        <td>
+                                            <a href="" class="btn btn-red">Remove</a>
+                                        </td>
+                                    </tr>
+                                   </tbody>
+                                   <tfoot>
+                                       <tr>
+                                           <th>Total</th>
+                                           <th>Price</th>
+                                           <th>
+                                            <button class="btn btn-green">Place Order</button>
+
+                                           </th>
+                                       </tr>
+                                   </tfoot>
+                               </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                     </div>
                 </div>
             </div>
+
+            </div>
+
+
         </div>
-    </div>
-</section>
-<!--End of main section-->
-<footer class="foot ">        
+    <script src="../../js/main.js"></script>
+    </section>
+    <footer class="foot">
         <div class="page-footer">
-            <p class="center marg-top50">Copyright 2018</p>
+            <p class="center">Copyright 2018</p>
         </div>
-</footer>
+    </footer>
 </body>
 </html>
-             
