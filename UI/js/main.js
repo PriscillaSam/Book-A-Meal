@@ -1,13 +1,13 @@
-// var btn = document.getElementById('#js-btn');
-
-// btn.addEventListener('mouseover', function () {
-
-//      btn.classList.add('btn');
-//  });
-
-//Display date
+const btn = document.getElementById('#js-btn');
 const delBtn = document.querySelectorAll('.delete');
 const dateHolder = document.querySelector('#js-date'); 
+const today = new Date();
+
+
+btn.addEventListener('mouseover', function () {
+
+      btn.classList.add('btn');
+ });
 
 
 const deleteTableRow = () => {
@@ -24,9 +24,7 @@ delBtn.forEach((item) => {
         deleteTableRow();
       }
       
-  });
-
-  
+  });  
 });
 
 
@@ -52,6 +50,5 @@ const formatDate = (date) => {
     return days[dayIndex] + ' ' + months[monthIndex] + ', ' + year;
   };
 
-const today = new Date();
 dateHolder.innerHTML = formatDate(today);
 
