@@ -95,14 +95,16 @@ text-align: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
 .welcome-banner{
-    background-image: url('../img/banner-imgg.jpg');
+    background-image: url("../img/banner-imgg.jpg");
 
 }
 .responsive{
     width: 100%;
 }
+
 .banner-content{
     border-radius: 5px;
     border:1px dashed #eee;
@@ -196,12 +198,17 @@ text-align: center;
 }
 
 /*Form section*/
+
+textarea{
+    color: grey;
+    height: 100px;
+}
 .form-title{
     color:#37474F;
 }
-.form-banner{
-    background-image: url('../img/login.jpg');
 
+.form-banner{
+    background-image: url(../img/login.jpg);
 }
 .form-wrapper{
     background: rgba(12, 14, 12, 0.3);
@@ -218,16 +225,18 @@ text-align: center;
 }
 .inner-wrapper{
     position: absolute;
-    top:20%;
+    top:50%;
     left:35%;
 
     width: 30%;
 
+    
 }
 
 select{
     color: grey;
 }
+
 .form-input{
     width: 100%;
     margin-top: 10px;
