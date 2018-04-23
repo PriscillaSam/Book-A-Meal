@@ -1,0 +1,152 @@
+.user-label{
+    border-radius: 6px;
+    width:50px;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.user-label a{
+    color: white;
+
+}
+.row{
+    display: flex;
+}
+
+.side-bar{
+    width: 20%;
+   padding:0 0 20px 20px;
+}
+.side-bar ul{
+    margin-top: 30px;
+}
+.side-nav-link{
+    margin-top: 20px;
+}
+.main-section{
+    width: 80%;
+    background-color: #F5F5F5;
+   height: auto;
+}
+
+.title-wrapper{
+    background: rgba(57, 58, 57);
+    opacity: 0.7;
+    bottom: 0;
+
+}
+.banner-title{
+    color:white;
+    font-weight: 0;
+    font-size: 70px;
+
+}
+
+.col{
+    width: 30%;
+}
+
+.col2{
+    width: 60%;
+}
+/*Checkbox*/
+.checkbox-group{
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.checkbox-group input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+.checkbox-group .check:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #009688;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkbox-group input:checked ~ .check:after {
+    display: block;}
+
+    /**/
+.pad20{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*Table styling*/
+.tbl{
+    width: 100%;
+    table-layout: fixed;
+
+    border-spacing: 10px;
+    border: 1px solid #eee;
+
+    border-collapse: collapse;
+    
+}
+.tbl-header{
+    letter-spacing: 1px;
+}
+
+tr{
+    text-align: center;
+}
+
+th, td{
+    padding:10px;
+    font-size: 14px;
+}
+.tbl tbody tr:nth-child(odd) {
+    background-color:#FFF176;
+  }
+ .tbl tbody tr:nth-child(even) {
+    background-color:#FFFF8D;
+  }
+.tbl tbody tr:hover{
+    background-color: white;
+    
+}
+  td .btn{
+      padding:2px 5px;
+      font-size: 13px;
+  }
+.p-title{
+    border: 1px solid #eee;
+    padding: 5px;    
+}
+
+.tbl-email{
+    color: black;
+}
+
+.tbl-email:hover{
+    text-decoration-line: underline;
+}
+
+ 

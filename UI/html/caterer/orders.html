@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Orders | Book-A-Meal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" type="text/css" href="../../css/user.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+<body>
+  <section>
+      <div class="row">
+          <!--Side navigation starts here-->
+          <div class="side-bar white marg-right20 pad-bot20">
+              <div>
+                <h1 id="" class="center marg-top50"> 
+                    <a href="../index.html" id="nav-title">
+                    Book<span>-A-</span>Meal               
+
+                    </a> 
+                    <span class="center blue user-label"><a href="home.html">Caterer</a></span> 
+              
+                </h1> 
+                <hr>
+              </div>
+              <div class="side-nav">
+                <ul>
+                    <li class="side-nav-link center">
+                        <a href="addmeal.html" class="nav-link">
+                            Add A Meal
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                        <a href="menu_setup.html" class="nav-link">
+                            Setup Menu
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                        <a href="orders.html" class="active nav-link">
+                            Today's Orders
+                        </a>
+                    </li>
+                    <li class="side-nav-link center">
+                            <a href="orderhistory.html" class="nav-link">
+                                Order History
+                            </a>
+                        </li>
+                    <li class="side-nav-link center">
+                            <a href="managemeals.html" class="nav-link">
+                                Manage Meal Options
+                            </a>
+                        </li>
+                    <li class="side-nav-link center">
+                        <a href="" class="nav-link">
+                          Log out  
+                
+                        </a>
+                    </li>
+                </ul>
+              </div>
+               
+            </div><!--End of side navigation-->
+             <!--Beginning of main section-->
+             <div class="main-section pad-bot20 pad20">
+                <div class="wrapper">
+                    <div class="panel white">
+                        <div class="" >
+                            <h1 class="panel-title left">
+                                    Today's Orders(Summary)
+                                </h1>
+                            <h2 class="right text-green" ><em id="js-date"></em></h2>
+                            <p style="clear: both;"></p>
+                        </div>
+                    </div>
+                    <div class="panel white marg-top20">                        
+                        <h2 class="text-green marg-bot30">Total Revenue: &#8358;60,000</h3>     
+
+                        <div class="row">                       
+                        <!--Beginning of breakfast table-->
+                        <div class="form-col marg-right20 col">  
+                            <div class="p-title center yellow">
+                             <p >Summary</p>
+                            </div>                      
+                                                               
+                            <div class="form-group">
+                                <table class="tbl-order-summary">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Meal
+                                            </th>
+                                            <th>Quantity Ordered</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Chips and ketchup
+                                            </td>
+                                            <td>
+                                                20
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Potato salad and sauce
+                                            </td>
+                                            <td>
+                                                16
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Beans cake and custard
+                                            </td>
+                                            <td>
+                                                12
+                                            </td>
+                                            </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>
+                                                Total Amount
+                                            </th>
+                                            <th>
+                                                &#8358;20,000
+                                            </th>
+                                        </tr>
+                                        </tfoot>
+                                </table>
+                            </div>
+                        </div><!--End -->
+                         <!--Beginning of Lunch table-->
+                        <div class="form-col marg-right20 col">
+                                <div class="p-title center red">
+                                        <p >Summary</p>
+                                       </div> 
+                                <div class="form-group">
+                                    <table class="tbl-order-summary">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Meal
+                                                </th>
+                                                <th>Quantity Ordered</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Chips and ketchup
+                                                </td>
+                                                <td>
+                                                    20
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Potato salad and sauce
+                                                </td>
+                                                <td>
+                                                    16
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Beans cake and custard
+                                                </td>
+                                                <td>
+                                                    12
+                                                </td>
+                                                </tr>
+                                        </tbody>
+                                       <tfoot>
+                                           <tr>
+                                               <th>
+                                                   Total Amount
+                                               </th>
+                                               <th>
+                                                   &#8358;20,000
+                                               </th>
+                                           </tr>
+                                       </tfoot>
+                                    </table>
+                                </div>
+                        </div><!--End-->
+                         <!--Beginning of Dinner table-->
+
+                        <div class="form-col col">
+                                    <div class="p-title center yellow">
+                                        <p >Summary</p>
+                                    </div> 
+                                    <div class="form-group">
+                                        <table class="tbl-order-summary">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Meal
+                                                    </th>
+                                                    <th>Quantity Ordered</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        Chips and ketchup
+                                                    </td>
+                                                    <td>
+                                                        20
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Potato salad and sauce
+                                                    </td>
+                                                    <td>
+                                                        16
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Beans cake and custard
+                                                    </td>
+                                                    <td>
+                                                        12
+                                                    </td>
+                                                    </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>
+                                                        Total Amount
+                                                    </th>
+                                                    <th>
+                                                        &#8358;20,000
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                        </div><!--End-->
+                    </div>
+                        <div class="marg-top20">
+                            <a href="orderdetails.html" id="js-btn" class="text-green btn-outline-green">
+                                    View Details
+                            </a>
+                        </div>
+                </div>
+              
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="foot ">        
+            <div class="page-footer">
+                <p class="center marg-top50">Copyright 2018</p>
+            </div>
+     </footer>
+    <script src="../../js/main.js"></script>
+
+</body>
+</html>
+
