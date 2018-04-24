@@ -1,31 +1,11 @@
 const btn = document.getElementById('#js-btn');
-const delBtn = document.querySelectorAll('.delete');
 const dateHolder = document.querySelector('#js-date'); 
 const today = new Date();
 
 
 btn.addEventListener('mouseover', function () {
-
       btn.classList.add('btn');
  });
-
-
-const deleteTableRow = () => {
-
-    
-};
-
-delBtn.forEach((item) => {
-
-    item.addEventListener('click', () => {
-
-      if(confirm('Are you sure you want to remove this meal option')) {
-
-        deleteTableRow();
-      }
-      
-  });  
-});
 
 
 //Function to format date
