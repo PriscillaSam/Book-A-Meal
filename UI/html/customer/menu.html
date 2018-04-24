@@ -6,9 +6,10 @@
     <title>Menu | Book-A-Meal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-    <link rel="stylesheet" href="../../css/site.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../css/site.css" />
     <link rel="stylesheet" type="text/css" href="../../css/user.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/modals.css"/>
 
 </head>
 <body>
@@ -47,8 +48,7 @@
                         </a>
                     </li>
                 </ul>
-              </div>
-               
+              </div>              
 
           </div><!--End of side navigation-->
 
@@ -65,8 +65,7 @@
                 </div>
 
                 <div class="panel white marg-top20">
-                        <!--Menu cards start here-->
-                                    
+                        <!--Menu cards start here-->                                   
                    
                     <div class="row marg-bot30">
                         <div class="col form-col marg-right20">
@@ -144,13 +143,28 @@
 
 
         </div>
-        <script src="../../js/table.js"></script>
-    <script src="../../js/main.js"></script>
+
+        <!--Modal section-->
+        <div class="modal" id="order-modal">
+            <div class="panel white col modal-content">
+                <span class="closeBtn"><strong>&times;</strong></span>
+                <h3 class="panel-title center">Make Your Order</h3>
+                <hr>
+
+                <p><strong>Meal Title</strong></p>
+                <p>Vegetable soup</p>
+            </div>
+        </div>
+        
     </section>
     <footer class="foot">
         <div class="page-footer">
             <p class="center">Copyright 2018</p>
         </div>
     </footer>
+
+    <!--Scripts-->
+    <script src="../../js/modals.js"></script>
+    <script src="../../js/table.js"></script>
 </body>
 </html>
