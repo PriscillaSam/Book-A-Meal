@@ -4,7 +4,8 @@
   "description": "Book-A-Meal is an application that enables customers to interact directly with food vendors. The food vendors sets up food menus and the customer has a variety of options to choose from and make orders. The food vendors are kept in the know of what their customers love to eat.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"server/**/*.js\" app.js --fix"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,10 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0"
   }
 }
