@@ -1,4 +1,4 @@
-import meals from './mealmodel';
+import meals from './meal';
 
 const menus = [
     {
