@@ -29,7 +29,7 @@ chai.use(chaiHttp);
     const updatedMeal = {
         mealId:1,
         name:'Chicken',
-        description: 'we love chicken',
+        description: 'We love chicken',
         price: 1500
     };
 
