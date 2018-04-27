@@ -1,31 +1,23 @@
-{
-  # "os": "linux",
-  # "dist": "trusty",
-  cache: 
-    directories: 
-      - node_modules, 
-     
-      
-  # "npm": true,
-    
-    
-  ,
-  # "group": "stable",
-  script: - npm run test,
-  node_js: - 9.11.1,
-  language: - node_js,
-  "global_env": "CC_TEST_REPORTER_ID=6a8e8207cb4d9f36061caa08ee3bd6584d55c378404543e8b10699946b6b58bf",
-  "after_script": [
-    "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-  ],
-  after_success: - npm run coverage,
-  # "before_script": [
-  #   "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter",
-  #   "chmod +x ./cc-test-reporter",
-  #   "./cc-test-reporter before-build"
-  # ],
-  # "before_install": [
-  #   "curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.5.1",
-  #   "export PATH=\"$HOME/.yarn/bin:$PATH\""
-  # ]
-}
+language: node_js
+node_js:
+  - "node"
+  - ""
+
+addons:
+  chrome: stable
+
+env:
+  - NODE_ENV=test
+
+before_script:
+  - chmod 0777 ./node_modules/.bin/mocha
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script: 
+  - npm run test:server 
+
+after_success:
+  - npm run coveralls
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
