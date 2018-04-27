@@ -1,14 +1,14 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import {expect} from 'chai';
-
+import app from '../app';
 chai.use(chaiHttp);
 
 
  describe('Get meals api route', (done) => {
     
     it('Returns a status code of 200 if meals are sucessfully gotten.', () => {
-        chai.request('http://localhost:3000')
+        chai.request(app)
         .get('/api/v1/meals')
         .end((err, res) => {
             expect(res).to.have.status(200);
@@ -22,7 +22,7 @@ chai.use(chaiHttp);
 
     it('Returns a 201 response if meal is successful created', () => {
           
-        chai.request('http://localhost:3000')
+        chai.request(app)
             .post('/api/v1/meals/')
             .send({
                 name:'Beans and plantain',
@@ -39,7 +39,7 @@ chai.use(chaiHttp);
     });
 
     it('Returns a 400 response if parameters are supplied incorrectly', (done) => {
-        chai.request('http://localhost:3000')
+        chai.request(app)
             .post('/api/v1/meals/')
             .send({
                 name:'Plantain',
