@@ -36,7 +36,7 @@ class Meal {
             description: req.body.description || meal.description,
             price : parseInt(req.body.price) || meal.price
 
-        }
+        };
 
         meals.splice(mealIndex, 1 , updatedMeal);
         return res.status(200).send({

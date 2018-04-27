@@ -8,10 +8,10 @@ chai.use(chaiHttp);
  describe('Meal Controller ', () => {
     
     it('should return a status code of 200 if meals are sucessfully gotten.', (done) => {
-        chai.request('http://localhost:3000')
+        chai.request(app)
         .get('/api/v1/meals')
         .end((err, res) => {
-            expect(res.body).to.be.a('array');
+            expect(res.body).to.be.an('object');
             expect(res).to.have.status(200);
             done();
         });
@@ -36,12 +36,10 @@ chai.use(chaiHttp);
      it('should update an existing meal in the database', (done) => {
         chai.request(app)
             .put('/api/v1/meals/1')
-            .send({
-                mealUpdate
-            })
-            .end(res => {
+            .send(mealUpdate)
+            .end((err, res) => {
                 expect(res).to.have.status(200);
-                expect(res.body).to.equal({
+                expect(res.body).to.be.deep.equal({
                     updatedMeal,
                     success: 'true',
                     message: 'meal successfully updated',
@@ -56,7 +54,7 @@ chai.use(chaiHttp);
             .send(mealUpdate)
             .end((err, res) => {
                 expect(res).to.have.status(404);
-                expect(res.body).to.equal({
+                expect(res.body).to.be.deep.equal({
                     success: 'false',
                     message: 'this meal does not exist'
                 });
