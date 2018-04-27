@@ -4,8 +4,9 @@ import meals from '../models/meal';
 class Meal {
 
     static getMeals(req,res) {
-        return res.json({
-            meals
+        return res.status(200).send({
+            meals,
+            message:'meals successfully gotten'
         });
     }    
 
@@ -24,8 +25,9 @@ class Meal {
             });
         }
         //else delete meal
-        meals.splice(mealIndex , 1);
-        return res.status(200).send({
+        const removedMeal = meals.splice(mealIndex , 1);
+        return res.status(200).send({ 
+            removedMeal,           
             success:'true',
             message:'meal successfully removed'
         });
