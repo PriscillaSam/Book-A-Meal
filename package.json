@@ -4,8 +4,8 @@
   "description": "Book-A-Meal is an application that enables customers to interact directly with food vendors. The food vendors sets up food menus and the customer has a variety of options to choose from and make orders. The food vendors are kept in the know of what their customers love to eat.",
   "main": "index.js",
   "scripts": {
-    "test:server": "set NODE_ENV=test && nyc --reporter=html --reporter=text --reporter=lcov mocha --compilers js:babel-core/register server/tests/*.test.js --timeout 5000 --exit",  
-    "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/*.test.js && cat ./coverage/lcov.info | coveralls",
+    "test:server": "set NODE_ENV=test && nyc --reporter=html --reporter=text --reporter=lcov mocha --compilers js:babel-core/register server/tests/menu.test.js --timeout 5000 --exit",  
+    "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/menu.test.js && cat ./coverage/lcov.info | coveralls",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint \"server/**/*.js\" app.js --fix",
     "start": "nodemon --watch server --exec babel-node server/bin/www.js"
