@@ -1,14 +1,13 @@
 language: node_js
 node_js:
   - "node"
-  - ""
+  - "8.8.1"
 
 addons:
   chrome: stable
 
 env:
-  - NODE_ENV=test
-
+  global: - CC_TEST_REPORTER_ID=6a8e8207cb4d9f36061caa08ee3bd6584d55c378404543e8b10699946b6b58bf
 before_script:
   - chmod 0777 ./node_modules/.bin/mocha
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -16,8 +15,8 @@ before_script:
   - ./cc-test-reporter before-build
 
 script: 
-  - npm run test:server 
+  - bundle exec rspec
 
-after_success:
+after_script:
   - npm run coveralls
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
