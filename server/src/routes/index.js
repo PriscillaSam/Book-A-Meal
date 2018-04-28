@@ -9,4 +9,4 @@ export default (app) => {
     app.put('/api/v1/meals/:mealId', Meal.updateMeal);
 
     app.delete('/api/v1/meals/:mealId', Meal.removeMeal);
-}
+};

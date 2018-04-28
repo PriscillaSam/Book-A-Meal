@@ -49,13 +49,17 @@ class Meal {
 
     }
 
-
+    /**
+     * @method removeMeal
+     * @param {object} req 
+     * @param {object} res 
+     */
     static removeMeal(req, res) {
         //find meal 
         const mealId = parseInt(req.params.mealId);        
 
-        const meal = meals.find(meal => meal.mealId == mealId);
-        const mealIndex = meals.findIndex(meal => meal.mealId == mealId);
+        const meal = meals.find(m => m.mealId == mealId);
+        const mealIndex = meals.findIndex(m => m.mealId == mealId);
 
         if(!meal) {
             return res.status(404).send({
@@ -66,7 +70,7 @@ class Meal {
         //else delete meal
         const removedMeal = meals.splice(mealIndex , 1);
         return res.status(200).send({ 
-            removedMeal,           
+            removedMeal:removedMeal[0],           
             success:'true',
             message:'meal successfully removed'
         });
