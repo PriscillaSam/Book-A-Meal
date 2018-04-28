@@ -11,10 +11,9 @@
     },
     "rules": {
         "semi":2,
-        "no-underscore-dangle":[
-            1,
-            {
-                "allow":["_id"]
-            }]      
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "no-underscore-dangle":[1,{"allow":["_id"]}]      
+            
     }
 }
