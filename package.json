@@ -8,7 +8,21 @@
     "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/menu.test.js && cat ./coverage/lcov.info | coveralls",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint \"server/**/*.js\" app.js --fix",
-    "start": "nodemon --watch server --exec babel-node server/bin/www.js"
+    "start": "nodemon --watch server --exec babel-node server/bin/www.js",
+    "nyc": {
+      "require": [
+        "babel-register"
+      ],
+      "exclude": [
+        "server/test/"
+      ],
+      "reporter": [
+        "lcov",
+        "text",
+        "html"
+      ],
+      "sourceMap": false,
+      "instrument": true
   },
   "repository": {
     "type": "git",
@@ -43,4 +57,5 @@
     "nodemon": "^1.17.3",
     "prettier": "^1.12.1"
   }
+}
 }
