@@ -42,6 +42,31 @@ class Menu {
         });
     }
 
+    /**
+     * 
+     * @method getMenu
+     * @param {Object} req 
+     * @param {Object} res 
+     */
+    static getMenu(req, res) {
+
+        const date = new Date().toTimeString();
+        const menu = menus.find(m => m.date.toTimeString() === date);
+        if(!menu) {
+            return res.status(404).send({
+                status:'error',
+                message: 'menu not found in the database'
+            });
+        }
+
+        return res.status(200).send({
+            menu,
+            status: 'success',
+            message: 'menu successfully gotten'
+        });
+
+    }
+
 }
 
 export default Menu;

@@ -42,3 +42,16 @@ describe('Set Menu in menu Controller', () => {
             });
     });
 });
+
+describe('Get menu method in Menu Controller', () => {
+    it('should return status of 200 if menu is successfully gotten', (done) => {
+        chai.request(app)
+            .get('/api/v1/menu/')
+            .end((err, res) => {
+                if(err) done(err);
+                res.should.have.status(200);
+                done();
+            });
+
+    });
+});
