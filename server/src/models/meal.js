@@ -14,7 +14,7 @@ const meals = [
         price: 1500
     },
     {
-        mealId:1,
+        mealId:3,
         name:'plantain and Chicken',
         description: 'Fried plantains and crispy chicken',
         imgUrl: '../../img/plantain.jpg',
