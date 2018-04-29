@@ -18,4 +18,5 @@ export default (app) => {
     app.get('/api/v1/orders/', Order.getOrders);
     app.post('/api/v1/orders/', Order.makeOrder);
     app.put('/api/v1/orders/:orderId', Order.updateOrder);
+    app.get('/api/v1/:userId/orders', Order.getUserOrders);
 };

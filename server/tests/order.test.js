@@ -108,3 +108,15 @@ describe('Update Order method of the order controller', () => {
             });
     }); 
 });
+
+// describe('Get user Orders in order controller', () => {
+//     it('Should return status code of 200 if orders sre gotten', (done) => {
+//         chai.request(app)
+//             .get('/api/v1/1/orders/')
+//             .end((err, res) => {
+//                 if(err) done(err);
+//                 res.should.have.status(200);
+//                 done();
+//             });
+//     });
+// });
