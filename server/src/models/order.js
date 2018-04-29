@@ -8,7 +8,7 @@ const orders = [
         meal: meals[0],
         quantity: 3,
         amount: 4500,       
-        date: new Date()
+        date: '2018-3-14'
     },
 
     {
@@ -17,7 +17,7 @@ const orders = [
         meal:meals[1],
         quantity: 2,
         amount: 4000,
-        date: new Date(2018,2,13)
+        date: '2018-2-24'
  
     },
     {
@@ -26,7 +26,7 @@ const orders = [
         meal:meals[2],
         quantity: 3,
         amount: 4500, 
-        date: new Date(2018,4,22)
+        date: '2018-4-17'
 
     },
     {
@@ -35,7 +35,7 @@ const orders = [
         meal:meals[2],
         quantity: 3,
         amount: 4500, 
-        date: new Date()
+        date: '2018-3-14'
     },    
     {
         orderId: 5,
@@ -43,7 +43,7 @@ const orders = [
         meal:meals[2],
         quantity: 3,
         amount: 4500, 
-        date: new Date(2018,1,10)
+        date: '2018-3-14'
 
     },    
     {
@@ -52,7 +52,7 @@ const orders = [
         meal:meals[2],
         quantity: 3,
         amount: 4500,
-        date: new Date()
+        date: '2018-3-14'
  
     },    
     {
@@ -61,7 +61,7 @@ const orders = [
         meal:meals[2],
         quantity: 3,
         amount: 4500,
-        date: new Date()
+        date: '2018-4-29'
  
     },    
     {
@@ -70,7 +70,7 @@ const orders = [
         meal:meals[2],
         quantity: 3,
         amount: 4500, 
-        date: new Date()
+        date: '2018-4-29'
 
     },
 ];
