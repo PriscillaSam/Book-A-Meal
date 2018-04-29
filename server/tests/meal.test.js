@@ -18,11 +18,7 @@ const updatedMeal = {
     price: 1500
 };
 
- describe('Get meals api route', (done) => {
-    
-    it('Returns a status code of 200 if meals are sucessfully gotten.', () => {
-
- describe('Get all meals ', () => {
+ describe('Get meals api route', () => {
     
     it('should return a status code of 200 if meals are sucessfully gotten.', (done) => {
         chai.request(app)
@@ -35,9 +31,9 @@ const updatedMeal = {
 
  });
 
- describe('Add a meal api route', (done) => {
+ describe('Add a meal api route', () => {
 
-    it('Returns a 201 response if meal is successful created', () => {
+    it('Returns a 201 response if meal is successful created', (done) => {
           
         chai.request(app)
             .post('/api/v1/meals/')
@@ -46,43 +42,41 @@ const updatedMeal = {
                 description:'A bucket of beans with plantain',
                 price: 1200
             })
-            .end((res,err) => {
+            .end((err,res) => {
                 expect(res).to.have.status(201);
                 expect(res).to.be.a('object');
-                    done();
+                done();
             });       
                  
 
     });
 
-    it('Returns a 400 response if parameters are supplied incorrectly', (done) => {
+    it('Returns a 400 response if insufficient parameters are supplied', (done) => {
         chai.request(app)
             .post('/api/v1/meals/')
             .send({
-                name:'Plantain',
                 description: 'A really cool meal',
                 price:1200
             })
-            .end((res,err) => {
+            .end((err,res) => {
                 expect(res).to.have.status(400);
                 done();
             });
 
     });
- });
-=======
-    it('should return an array of meals', (done) => {
-        chai.request(app)
-            .get('/ap1/v1/meals')
-            .end((err,res) => {
-                if(err) done(err);
-                expect(res.body).to.deep.equal({
-                    meals,
-                    message:'meals successfully gotten'
-                });
-                done();
-            });
-    });
+ 
+    // it('should return an array of meals', (done) => {
+    //     chai.request(app)
+    //         .get('/ap1/v1/meals')
+    //         .end((err,res) => {
+    //             if(err) done(err);
+    //             expect(res.body).to.deep.equal({
+    //                 meals,
+    //                 message:'meals successfully gotten'
+    //             });
+    //             done();
+    //         });
+    // });
     
 });
 
@@ -98,6 +92,19 @@ describe('Update a meal api route', () => {
             });
 
         });
+        it('should return an error 404 if the meal is not found', (done) => {
+            chai.request(app)
+                .put('/api/v1/meals/5')
+                .send(mealUpdate)
+                .end((err, res) => {
+                    expect(res).to.have.status(404);
+                    expect(res.body).to.be.deep.equal({
+                        success: 'false',
+                        message: 'this meal does not exist'
+                    });
+                    done();
+                });
+            });
  
 });
  
@@ -120,32 +127,20 @@ describe('Delete a meal option', () => {
             });
      });
 
-     it('should return an error 404 if the meal is not found', (done) => {
-        chai.request(app)
-            .put('/api/v1/meals/5')
-            .send(mealUpdate)
-            .end((err, res) => {
-                expect(res).to.have.status(404);
-                expect(res.body).to.be.deep.equal({
-                    success: 'false',
-                    message: 'this meal does not exist'
-                });
-                done();
-            });
-        });
+    
 
-     it('should return the removed meal', (done) => {
-         chai.request(app)
-            .delete('/api/v1/meals/2')
-            .end((err,res) => {
-                if(err) done(err);               
-                expect(res.body).to.equal({
-                    removedMeal:deletedMeal,
-                    success:'true',
-                    message:'meal successfully removed'
-                });
-                done();
-            });
-     });
+    //  it('should return the removed meal', (done) => {
+    //      chai.request(app)
+    //         .delete('/api/v1/meals/2')
+    //         .end((err,res) => {
+    //             if(err) done(err);               
+    //             expect(res.body).to.equal({
+    //                 removedMeal:deletedMeal,
+    //                 success:'true',
+    //                 message:'meal successfully removed'
+    //             });
+    //             done();
+    //         });
+    //  });
 });
 

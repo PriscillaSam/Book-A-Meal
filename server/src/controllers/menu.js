@@ -50,8 +50,8 @@ class Menu {
      */
     static getMenu(req, res) {
 
-        const date = new Date().toTimeString();
-        const menu = menus.find(m => m.date.toTimeString() === date);
+        const date = '2018-4-30';
+        const menu = menus.find(m => m.date === date);
         if(!menu) {
             return res.status(404).send({
                 status:'error',

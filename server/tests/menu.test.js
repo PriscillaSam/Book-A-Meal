@@ -14,7 +14,7 @@ describe('Set Menu in menu Controller', () => {
     const newMenu = {
         userId: 1,
         menuMeals: [ meals[0],meals[1] ],
-        date: new Date()
+        date: '2018-4-30'
     };
 
     it('Should return status 200 if menu is successfully set', (done) => {

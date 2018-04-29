@@ -107,6 +107,30 @@ class Order {
         });
 
     }
+    /**
+     * @method getUserOrders
+     * @param {object} req 
+     * @param {object} res 
+     */
+    static getUserOrders(req, res) {
+        const userId = parseInt(req.params.userId);
+
+        //get all orders with userId
+        const userOrders = orders.filter(o => o.user.userId === userId);
+        if(userOrders.length === 0) {
+            return res.status(204).send({
+                status:'no content',
+                message:'you currently have no orders to display'
+            });
+
+        }
+
+        return res.status(200).send({
+            status:'success',
+            message:'Orders successfully gotten',
+            userOrders
+        });
+    }
 
 }
 
