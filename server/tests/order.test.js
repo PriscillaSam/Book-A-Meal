@@ -8,8 +8,7 @@ should();
 
 
 describe('Get Orders method in Order Controller', () => {
-    const todayOrders = orders.filter(o => o.date.toDateString() === new Date().toDateString());
-    
+    const todayOrders = orders.filter(o => o.date.toTimeString() === new Date().toTimeString());    
     it('should return status 200 if orders are successfully gotten', (done) => {
         chai.request(app)
             .get('/api/v1/orders')
@@ -22,15 +21,16 @@ describe('Get Orders method in Order Controller', () => {
     });
 
     it('should return an array of orders for today', (done) => {
-        chai.request()
+        chai.request(app)
             .get('/api/v1/orders')
             .end((err, res) => {
                 if(err) done(err);
-                // res.body.orders.should.equal(todayOrders);
+                res.body.todayOrders.should.equal(todayOrders);        
                 todayOrders.should.have.lengthOf(5);
                 done();
             });
     });
+
 });
 
 describe('Make Order method in order controller', () => {

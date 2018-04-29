@@ -1,4 +1,5 @@
 import orders from '../models/order';
+
 import users from '../models/user';
 
 /**
@@ -7,6 +8,7 @@ import users from '../models/user';
 class Order {
 
     /**
+
      * @method makeOrder
      * @param {object} req 
      * @param {object} res 
@@ -54,14 +56,17 @@ class Order {
         //filter through orders using this date
         const todayOrders = orders.filter(o => o.date.toTimeString() === date);
         
-        if(todayOrders.length === 0) {
+        if(todayOrders.length === 0) {                      
+
             return res.status(204).send({
                 message:'there are no orders yet'
             });
         }
 
         return res.status(200).send({
-            orders
+            status:'success',
+            message:'request successful. Orders succesfully gotten',
+            todayOrders,            
         });
 
     }

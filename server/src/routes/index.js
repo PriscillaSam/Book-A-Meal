@@ -12,6 +12,9 @@ export default (app) => {
 
     //Menu routes
     app.post('/api/v1/menu/', Menu.setMenu);
+    
+    //Order routes
+    app.get('/api/v1/orders/', Order.getOrders);
     app.get('/api/v1/menu/', Menu.getMenu);
 
     //Order routes
