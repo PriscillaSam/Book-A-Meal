@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:server": "set NODE_ENV=test && nyc --reporter=html --reporter=text --reporter=lcov mocha --compilers js:babel-core/register server/tests/menu.test.js --timeout 5000 --exit",  
-    "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/menu.test.js && cat ./coverage/lcov.info | coveralls",
+    "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/order.test.js && cat ./coverage/lcov.info | coveralls",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint \"server/**/*.js\" app.js --fix",
     "start": "nodemon --watch server --exec babel-node server/bin/www.js",
