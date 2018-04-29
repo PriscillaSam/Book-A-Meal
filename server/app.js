@@ -8,10 +8,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 routes(app);
 
-app.get('/', (req,res) => 
-    res.status(200).send({
-      message: 'Hello from Book-A-Meal' 
-}));
+app.get('/', (req,res) => {
+  res.status(200).send({
+    message: 'Hello from Book-A-Meal'
+});
+});
 
 
 export default app;
