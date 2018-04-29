@@ -15,4 +15,5 @@ export default (app) => {
     
     //Order routes
     app.get('/api/v1/orders/', Order.getOrders);
+    app.get('/api/v1/menu/', Menu.getMenu);
 };

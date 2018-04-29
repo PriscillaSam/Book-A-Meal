@@ -18,6 +18,12 @@ const menus = [
         userId: 2,
         menuMeals: [meals[1],meals[0]],
         date: new Date(2017,12,22),
+    },
+    {
+        menuId: 4,
+        userId: 2,
+        menuMeals: [meals[1],meals[0], meals[2]],
+        date: new Date(),
     }
 ];
 
