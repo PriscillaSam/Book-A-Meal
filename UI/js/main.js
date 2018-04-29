@@ -1,12 +1,5 @@
-const btn = document.getElementById('#js-btn');
 const dateHolder = document.querySelector('#js-date'); 
 const today = new Date();
-
-
-btn.addEventListener('mouseover', function () {
-      btn.classList.add('btn');
- });
-
 
 //Function to format date
 const formatDate = (date) => {
