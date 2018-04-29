@@ -3,105 +3,191 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Order History | Book-A-Meal</title>
+    <title>Order | Book-A-Meal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="../../css/site.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../css/site.css" />
     <link rel="stylesheet" type="text/css" href="../../css/user.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/modals.css"/>
 
 </head>
 <body>
   <section>
       <div class="row">
           <!--Side navigation starts here-->
-          <div class="side-bar white marg-right20 pad-bot20">
+          <div class="side-bar white marg-right20">
               <div>
                 <h1 id="" class="center marg-top50"> 
                     <a href="../index.html" id="nav-title">
                     Book<span>-A-</span>Meal               
 
-                    </a>
-                    <span class="center red user-label"><a href="menu.html">Customer</a></span> 
-           
-                </h1>
+                    </a>  
+                    <span class="center red user-label"><a href="home.html">Customer</a></span> 
+             
+                </h1> 
                 <hr>
               </div>
               <div class="side-nav">
-                <ul>
+                <ul>                   
+                   
                     <li class="side-nav-link center">
-                            <a href="menu.html" class="nav-link">
+                            <a href="menu.html" class="active nav-link">
                                 Menu
                             </a>
                         </li>
                     <li class="side-nav-link center">
-                        <a href="" class="active nav-link">
+                        <a href="orders.html" class="nav-link">
                             Your Orders
                         </a>
                     </li>
                     <li class="side-nav-link center">
                         <a href="../login.html" class="nav-link">
-                            Log out  
+                          Log out  
                 
                         </a>
                     </li>
                 </ul>
-              </div>
-               
-            </div><!--End of side navigation-->
-             <!--Beginning of main section-->
-             <div class="main-section pad-bot20 pad20">
-                <div class="wrapper">
-                    <div class="panel white">
+              </div>              
 
-                            <h1 class="panel-title">
-                                Edit your order
-                            </h1>                          
-                            <hr>
+          </div><!--End of side navigation-->
+
+          <div class="main-section pad-bot20 pad20">
+            <div class="wrapper">
+                <div class="panel white">
+                    <div class="" >
+                        <h1 class="panel-title left">
+
+                        Your Order    
+                        </h1>
+                        <h2 class="right text-green" ><em id="js-date"></em></h2>
+                        <p class="clear"></p>
                     </div>
-                    <div class="panel white marg-top20">
-                            <div class="form-col pad20 col">
-                                    <h3 class="center form-title" style="border-bottom: 1px solid #BDBDBD;padding: 5px; ">Select your meal</h3>
-                                    <div class="form-group" >
-                                        <form action="post" name="EditOrder">
-                                            <div class="form-input">
-                                                <p>Select meal from menu</p>
-                                                <select id="" name="UserType" class="form-control">
-                                                    <option value="">Select User Type</option>
-                                                    <option value="">Fried rice and chicken</option>
-                                                    <option value="">Jollof spaghetti</option> 
-                                                    <option value="">Jollof spaghetti</option> 
-                                                    <option value="">Jollof spaghetti</option> 
+                </div>
 
-                                                </select>
-                                            </div>
-                                            <div class="form-input">
-                                                <input type="text" name="Name" class="form-control" value="Plantain Porridge and chicken" placeholder="Meal Name" />
-                    
-                                            </div>
-                                            <div class="form-input">
-                                                <input type="text" name="Price" class="form-control" value="&#8358;1500" placeholder="Meal Price" />
-                    
-                                            </div>                                            
-                                            
-                                            <div class="form-input">
-                                                <button class="btn btn-green">Place Order</button>            
-                                            </div>
-                                                       
-                                
-                                     </form><!--End of add meal form-->
-                                </div>     
+                <div class="panel white marg-top20">
+                        <!--Menu cards start here-->                                   
+                        <p class="marg-bot30 panel yellow">You can change your order below</p>
+                        <div class="form-col col2 marg-bot30">
+                            <div class="form-group">
+                                <form>
+                                    <table>
+                                        <thead>
+                                            <th>Meal</th>
+                                            <th>Price(&#8358;)</th>
+                                            <th>Quantity</th>
+                                        </thead>
+                                        <tbody>
+                                            <td>Vegetable soup and Semovita</td>
+                                            <td>3000</td>
+                                            <td>
+                                                <input type="number" class="form-control" />
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-red">Place Order</button>
+                                            </td>
+                                        </tbody>
+                                    </table>
+                                </form>
+                               
+                            </div>
+                        </div>
+                    <div class="row marg-bot30">
+                        <div class="col form-col marg-right20">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+
+                        </div>
+                        <div class="col form-col marg-right20 pad-bot20">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+                        </div>
+                        <div class="col form-col">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+                        </div>
                     </div>
+                   
+                    <div class="row marg-bot30">
+                        <div class="col form-col marg-right20">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
 
+                        </div>
+                        <div class="col form-col marg-right20 pad-bot20">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+                        </div>
+                        <div class="col form-col">
+                            <img src="../../img/coffee.jpg" class="responsive" />
+                        
+                            <div class="pad20">
+                                <p class="center">Meal Title</p>
+                                <p class="left">Meal Price</p>
+                                <a href="" class="btn right center btn-green js-order-btn">Order</a>
+                            </div>
+                        
+                        </div>
+                    </div>
+           
+                </div>
                 </div>
             </div>
+
         </div>
-    </section>
-    <footer class="foot ">        
-            <div class="page-footer">
-                <p class="center marg-top50">Copyright 2018</p>
+
+        
+        
+
+        <!--Modal section-->
+        <div class="modal" id="order-modal">
+            <div class="panel white col modal-content">
+                <span class="closeBtn"><strong>&times;</strong></span>
+                <h3 class="panel-title center">Thank you for Your Order</h3>
+              
             </div>
+        </div>
+        
+    </section>
+    <footer class="foot">
+        <div class="page-footer">
+            <p class="center">Copyright 2018</p>
+        </div>
     </footer>
+
+    <!--Scripts-->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/modals.js"></script>
+
 </body>
 </html>
-
