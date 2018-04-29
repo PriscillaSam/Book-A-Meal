@@ -9,6 +9,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint \"server/**/*.js\" app.js --fix",
     "start": "nodemon --watch server --exec babel-node server/bin/www.js",
+    "start:dev": "babel-node server/app.js",
     "nyc": {
       "require": [
         "babel-register"
