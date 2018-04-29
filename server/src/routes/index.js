@@ -1,6 +1,7 @@
 import Meal from '../controllers/meal';
 import meals from '../models/meal';
 import Menu from '../controllers/menu';
+import Order from '../controllers/order';
 
 export default (app) => {
 
@@ -12,4 +13,9 @@ export default (app) => {
     //Menu routes
     app.post('/api/v1/menu/', Menu.setMenu);
     app.get('/api/v1/menu/', Menu.getMenu);
+
+    //Order routes
+    app.get('/api/v1/orders/', Order.getOrders);
+    app.post('/api/v1/orders/', Order.makeOrder);
+
 };
