@@ -4,7 +4,26 @@
   "description": "Book-A-Meal is an application that enables customers to interact directly with food vendors. The food vendors sets up food menus and the customer has a variety of options to choose from and make orders. The food vendors are kept in the know of what their customers love to eat.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:server": "set NODE_ENV=test && nyc --reporter=html --reporter=text --reporter=lcov mocha --compilers js:babel-core/register server/tests/*.test.js --timeout 5000 --exit",  
+    "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/*.test.js && cat ./coverage/lcov.info | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint \"server/**/*.js\" app.js --fix",
+    "start:dev": "nodemon --watch server --exec babel-node server/bin/www.js",
+    "start": "babel-node server/app.js",
+    "nyc": {
+      "require": [
+        "babel-register"
+      ],
+      "exclude": [
+        "server/test/"
+      ],
+      "reporter": [
+        "lcov",
+        "text",
+        "html"
+      ],
+      "sourceMap": false,
+      "instrument": true
   },
   "repository": {
     "type": "git",
@@ -18,7 +37,26 @@
   "homepage": "https://github.com/PriscillaSam/Book-A-Meal#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "express": "^4.16.3"
+    "body-parser": "^1.18.2",
+    "coveralls": "^3.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "express": "^4.16.3",
+    "istanbul": "^0.4.5",
+    "nyc": "^11.7.1"
+  },  
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.3",
+    "prettier": "^1.12.1"
   }
+}
 }
