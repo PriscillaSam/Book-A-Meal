@@ -1,17 +1,13 @@
 const modal = document.getElementById('order-modal');
-const delBtn = document.querySelectorAll('.delete');
-const orderBtns = document.querySelectorAll('.js-order-btn');
+const orderBtn = document.querySelector('.order-btn');
 const closeBtn = document.getElementsByClassName('closeBtn')[0];
 
 
+orderBtn.addEventListener('click', () =>  {
 
-orderBtns.forEach((btn) => {
-
-    btn.addEventListener('click', (e) =>  {
-
-        modal.style.display = 'block';
-        
-    });
+    modal.classList.remove('hidden');
+    //modal.style.display = 'block';
+    
 });
 
 closeBtn.onclick = () => {
@@ -25,14 +21,14 @@ window.addEventListener('click', (e) => {
     }
 });
 
-delBtn.forEach((item) => {
-
+function deleteBtn(item) {
     item.addEventListener('click', () => {
 
-      if(confirm('Are you sure you want to remove this meal option')) {
+        if(confirm('Are you sure you want to remove this meal option')) {
+            alert('This meal has been deleted');
+        }
+    
 
-        deleteTableRow();
-      }
-      
-  });  
-});
+    });
+}
+

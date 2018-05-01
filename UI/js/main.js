@@ -19,8 +19,8 @@ const formatDate = (date) => {
     const dayIndex = date.getDay();
     const monthIndex = date.getMonth();
     const year = date.getFullYear();
-  
-    return days[dayIndex] + ' ' + months[monthIndex] + ', ' + year;
+    const day = date.getDate();
+    return `${days[dayIndex]}, ${months[monthIndex]} ${day} ${year}`;
   };
 
 dateHolder.innerHTML = formatDate(today);
