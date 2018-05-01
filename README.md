@@ -1,5 +1,8 @@
 # Book-A-Meal
-
+[![Coverage Status](https://coveralls.io/repos/github/PriscillaSam/Book-A-Meal/badge.svg?branch=master)](https://coveralls.io/github/PriscillaSam/Book-A-Meal?branch=master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Build Status](https://travis-ci.org/PriscillaSam/Book-A-Meal.svg?branch=develop)](https://travis-ci.org/PriscillaSam/Book-A-Meal)
 ## Description
 
 Book-A-Meal is an application that enables customers to interact directly with food vendors. The food vendors sets up food menus and the customer has a variety of options to choose from and make orders. The food vendors are kept in the know of what their customers love to eat.
