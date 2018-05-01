@@ -45,7 +45,7 @@ class Meal {
             price : parseInt(req.body.price) || meal.price
 
         };
-
+        //try using map 
         meals.splice(mealIndex, 1 , updatedMeal);
         return res.status(200).send({
             updatedMeal,
@@ -105,9 +105,9 @@ class Meal {
             });
 
         }
-
+        //generate id
         const meal = {
-            mealId: meals.length,
+            mealId: meals[meals.length - 1].mealId + 1,
             name,
             description,
             imageUrl,
