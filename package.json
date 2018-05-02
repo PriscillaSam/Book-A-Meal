@@ -8,8 +8,8 @@
     "test": "nyc _mocha --report lcovonly --reporter spec --timeout 20000 --compilers js:babel-core/register server/tests/*.test.js && cat ./coverage/lcov.info | coveralls",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint:server": "eslint \"server/**/*.js\" app.js --fix",
-    "start:dev": "nodemon --watch server --exec babel-node server/bin/www.js",
-    "start": "babel-node server/app.js"
+    "start": "nodemon --watch server --exec babel-node server/app.js",
+    "start:dev": "babel-node server/app.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,9 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "express": "^4.16.3",
+    "express-validation": "^1.0.2",
     "istanbul": "^0.4.5",
+    "joi": "^13.2.0",
     "nyc": "^11.7.1"
   },
   "devDependencies": {
@@ -42,6 +44,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
     "mocha": "^5.1.1",
     "nodemon": "^1.17.3",
     "prettier": "^1.12.1"

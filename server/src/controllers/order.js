@@ -1,7 +1,5 @@
 import orders from '../models/order';
 
-import users from '../models/user';
-
 /**
  * @class Order Controller
  */
@@ -50,9 +48,9 @@ class Order {
      */
     static updateOrder(req, res) {
 
-        const orderId = parseInt(req.params.orderId);
+        const orderId = parseInt(req.params.orderId, 10);
 
-        //check if order exists
+        // check if order exists
         const order = orders.find(o => o.orderId === orderId);
         const orderIndex = orders.findIndex(o => o.orderId === orderId);
 
@@ -71,7 +69,7 @@ class Order {
             amount: req.body.amount || order.amount
         };
 
-        //remove former order and replace with the new
+        // remove former order and replace with the new
         orders.splice(orderIndex, 1, updatedOrder);
         return res.status(200).send({
             status:'success',
@@ -82,15 +80,15 @@ class Order {
     }
     /**
      * get all orders for a particular day
-     * @method getOrders
+     * @method getTodayOrders
      * @param {object} req 
      * @param {object} res 
      */
-    static getOrders(req, res) {
+    static getTodayOrders(req, res) {
 
         const date = '2018-3-14';
 
-        //filter through orders using this date
+        // filter through orders using this date
         const todayOrders = orders.filter(o => o.date === date);
         
         if(todayOrders.length === 0) {                      
@@ -113,9 +111,9 @@ class Order {
      * @param {object} res 
      */
     static getUserOrders(req, res) {
-        const userId = parseInt(req.params.userId);
+        const userId = parseInt(req.params.userId, 10);
 
-        //get all orders with userId
+        // get all orders with userId
         const userOrders = orders.filter(o => o.user.userId === userId);
         if(userOrders.length === 0) {
             return res.status(204).send({
@@ -129,6 +127,17 @@ class Order {
             status:'success',
             message:'Orders successfully gotten',
             userOrders
+        });
+    }
+    /**
+     * @method getAllOrders
+     * @param {object} req 
+     * @param {object} res 
+     */
+    static getAllOrders(req, res) {
+
+        return res.status(200).send({
+            orders
         });
     }
 
