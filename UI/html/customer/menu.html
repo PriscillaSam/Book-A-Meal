@@ -151,9 +151,16 @@
                                             <input type="number" class="form-control" />
                                         </td>
                                         <td>
-                                            <button class="btn btn-red">Place Order</button>
+                                            <button class="btn btn-red order-btn">Place Order</button>
                                         </td>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            
+                                            <th>Total</th>
+                                            <th>&#8358;3000</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </form>
                            
@@ -163,17 +170,22 @@
                 </div>
             </div>
 
-        </div>
-
-        
+        </div>       
         
 
         <!--Modal section-->
         <div class="modal" id="order-modal">
             <div class="panel white col modal-content">
                 <span class="closeBtn"><strong>&times;</strong></span>
-                <h3 class="panel-title center">Thank you for Your Order</h3>
-              
+                <h3 class="panel-title center">Please confirm your order</h3>
+                <hr>
+                <h3 class="marg-top10">Meal:</h3><span>Efo riro and pounded yam</span>
+                <h3 class="marg-top10">Price</h3><span>&#8358;2000</span>
+                
+                <h3 class="marg-top10">Quantity:</h3><span>2</span>
+                <h3 class="marg-top10">Total:</h3><span>&#8358;4000</span>
+              <a class="btn btn-red marg-top10 right">Confirm Order</a>
+              <p class="clear"></p>
             </div>
         </div>
         

@@ -122,15 +122,10 @@ th, td{
     padding:10px;
     font-size: 14px;
 }
-.tbl tbody tr:nth-child(odd) {
-    background-color:#FFF176;
-  }
- .tbl tbody tr:nth-child(even) {
-    background-color:#FFFF8D;
-  }
+
 .tbl tbody tr:hover{
-    background-color: white;
-    
+    background-color: #4DB6AC;
+    color:white;
 }
   td .btn{
       padding:2px 5px;
