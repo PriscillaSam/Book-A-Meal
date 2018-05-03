@@ -17,6 +17,9 @@ p,a, ul,li{
     padding: 0;
     font-family:'Open Sans', sans-serif;
 }
+body{
+    background-color: white;
+}
 a{
     text-decoration: none;
 }
@@ -109,8 +112,8 @@ text-align: center;
     top:25%;
     left:25%;
 
-    height: 200px;
-    background: rgba(227, 231, 228, 0.3);
+    min-height: 200px;
+    background: rgba(227, 231, 228,0.6);
 }
 
 .abs-pos{
@@ -134,7 +137,7 @@ text-align: center;
 .banner-content p{
     font-size: 20px;
     margin-bottom: 15px;
-    color: white;
+    color: #00695C;
 }
 
 .mid{
@@ -221,7 +224,7 @@ textarea{
 }
 .inner-wrapper{
     position: absolute;
-    top:20%;
+    top:15%;
     left:35%;
 
     width: 30%;    

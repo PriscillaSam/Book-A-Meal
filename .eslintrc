@@ -13,7 +13,8 @@
         "semi":2,
         "import/no-unresolved": "off",
         "import/extensions": "off",
-        "no-underscore-dangle":[1,{"allow":["_id"]}]      
+        "no-underscore-dangle":[1,{"allow":["_id"]}],
+        "linebreak-style":"off"     
             
     }
 }
