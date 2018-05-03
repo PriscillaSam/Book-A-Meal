@@ -1,4 +1,4 @@
-import orders from '../models/order';
+import orders from '../models/dummyModels/order';
 
 /**
  * @class Order Controller

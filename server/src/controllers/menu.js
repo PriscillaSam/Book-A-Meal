@@ -1,5 +1,5 @@
-import menus from '../models/menu';
-import meals from '../models/meal';
+import menus from '../models/dummyModels/menu';
+import meals from '../models/dummyModels/meal';
 /**
  * @class MenuController
  */

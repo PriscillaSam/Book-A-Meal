@@ -1,4 +1,4 @@
-import meals from '../models/meal';
+import meals from '../models/dummyModels/meal';
 
 /**
 *

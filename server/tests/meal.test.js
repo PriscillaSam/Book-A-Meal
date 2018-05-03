@@ -2,7 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import {expect} from 'chai';
 import app from '../app';
-import meals from '../src/models/meal';
+import meals from '../src/models/dummyModels/meal';
 
 chai.use(chaiHttp);
 
@@ -97,6 +97,7 @@ describe('Update a meal api route', () => {
                 .put('/api/v1/meals/5')
                 .send(mealUpdate)
                 .end((err, res) => {
+                    if(err) done(err);
                     expect(res).to.have.status(404);
                     expect(res.body).to.be.deep.equal({
                         success: 'false',
@@ -104,7 +105,7 @@ describe('Update a meal api route', () => {
                     });
                     done();
                 });
-            });
+        });
  
 });
  

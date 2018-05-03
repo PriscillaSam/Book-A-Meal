@@ -2,8 +2,8 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
 import {should} from 'chai';
-import meals from '../src/models/meal';
-import menus from '../src/models/menu';
+import meals from '../src/models/dummyModels/meal';
+import menus from '../src/models/dummyModels/menu';
 
 chai.use(chaiHttp);
 should();

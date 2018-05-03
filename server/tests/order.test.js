@@ -2,7 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import {should} from 'chai';
 import app from '../app';
-import orders from '../src/models/order';
+import orders from '../src/models/dummyModels/order';
 chai.use(chaiHttp);
 should();
 
