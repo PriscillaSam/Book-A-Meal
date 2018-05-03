@@ -1,11 +1,13 @@
 /* eslint no-console: 0 */
-import express from "express";
+import express from 'express';
+import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import mealRoutes from './src/routes/meal';
 import orderRoutes from './src/routes/order';
 import menuRoutes from './src/routes/menu';
 import errorHandler from './src/middleware/errorHandlers/errorHandler';
 
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
