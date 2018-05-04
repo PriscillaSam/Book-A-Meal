@@ -1,36 +1,37 @@
-'use strict';
+/* eslint no-unused-vars: 0 */
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Meals', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      name: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
-      imgUrl: {
-        type: Sequelize.STRING
-      },
-      price: {
-        type: Sequelize.NUMBER
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
-  },
+   up: (queryInterface, Sequelize) => {
+     queryInterface.createTable('Meals', {
+
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: Sequelize.INTEGER,
+      defaultValue: Sequelize.INTEGER
+    },
+    name: {
+      type: Sequelize.STRING
+    },
+    description: {
+      type: Sequelize.STRING
+    },
+    imgUrl: {
+      type: Sequelize.STRING
+    },
+    price: {
+      type: Sequelize.DECIMAL
+    },
+    createdAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    }
+  });
+},
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Meals');
-  }
-};
+   queryInterface.dropTable('Meals');
+}};

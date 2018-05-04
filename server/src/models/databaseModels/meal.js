@@ -1,6 +1,11 @@
-export default function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const Meal = sequelize.define('Meal', {
-
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -22,7 +27,12 @@ export default function (sequelize, DataTypes) {
  
   Meal.associate = (models) => {
     // associations can be defined here
+    Meal.belongsToMany(models.Menu, {
+      through: models.MealMenu,
+      foreignKey: 'MealId',
+      onDelete: 'CASCADE'
+    });
     
   };
   return Meal;
-}
+};

@@ -1,0 +1,24 @@
+{
+    "development": {
+        "username": "postgres",
+        "password": "admin1",
+        "database": "Book-A-Meal",
+        "host": "localhost",
+        "dialect": "postgres"
+    },
+    "test": {
+      "username": "postgres",
+        "password": "admin1",
+        "database": "Book-A-Meal",
+        "host": "localhost",
+        "dialect": "postgres"
+    },
+    "production": {
+      "username": "postgres",
+        "password": "admin1",
+        "database": "Book-A-Meal",
+        "host": "localhost",
+        "dialect": "postgres"
+    }
+  }
+  
