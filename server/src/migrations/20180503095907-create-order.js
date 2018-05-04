@@ -14,19 +14,7 @@ module.exports ={
     },
     Amount: {
       type: Sequelize.DECIMAL
-    },
-    date: {
-      type: Sequelize.DATE
-    },
-    mealId: {
-      type: Sequelize.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Meals',
-        key: 'id'
-      }
-    },
-
+    },   
     userId: {
       type: Sequelize.INTEGER,
       onDelete: 'CASCADE',

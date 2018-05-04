@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4
+      type: DataTypes.INTEGER,
+      defaultValue: DataTypes.INTEGER
     },
     name: {
       type: DataTypes.STRING,
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     price: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.DECIMAL,
       allowNull: false
     }
     
@@ -32,7 +32,13 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'MealId',
       onDelete: 'CASCADE'
     });
-    
+
+    Meal.belongsToMany(models.Order, {
+      through: models.OrderMeal,
+      foreignKey: 'MealId',
+      onDelete: 'CASCADE'
+    });
   };
+ 
   return Meal;
 };

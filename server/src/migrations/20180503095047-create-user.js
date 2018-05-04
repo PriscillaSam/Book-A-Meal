@@ -7,8 +7,8 @@ module.exports = {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4
+      type: Sequelize.INTEGER,
+      defaultValue: Sequelize.INTEGER
     },
     name: {
       type: Sequelize.STRING
@@ -20,7 +20,7 @@ module.exports = {
       type: Sequelize.STRING
     },
     userTypeId: {
-      type:Sequelize.UUID,
+      type:Sequelize.INTEGER,
       onDelete: 'CASCADE',
       references: {
         model: 'Users',

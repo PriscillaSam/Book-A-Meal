@@ -7,28 +7,25 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.INTEGER
     },
     quantity: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.DECIMAL,
       allowNull: false
     
     },
     Amount:{      
-      type: DataTypes.NUMBER,
+      type: DataTypes.DECIMAL,
       allowNull: false
-    }
+    },
+   
   });
 
   Order.associate = (models) => {
     // associations can be defined here
-    Order.hasOne(models.Meal, {
-      foreignKey: 'mealId',
-      onDelete: 'SET NULL'    
-      
-    });
-
-    Order.belongsTo(models.User, {
-      foreignKey: 'userId',
+    Order.belongsToMany(models.Meal, {
+      through: models.OrderMeal,
+      foreignKey: 'OrderId',
       onDelete: 'CASCADE'
     });
+    
   };
 
   return Order;
