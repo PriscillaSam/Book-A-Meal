@@ -2,21 +2,18 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import mealRoutes from './src/routes/meal';
-import orderRoutes from './src/routes/order';
-import menuRoutes from './src/routes/menu';
+import routes from './src/routes/index';
 import errorHandler from './src/middleware/errorHandlers/errorHandler';
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use('/api/v1/meals', mealRoutes);
-app.use('/api/v1/orders', orderRoutes);
-app.use('/api/v1/menu', menuRoutes);
+app.use(bodyParser.urlencoded({extended: true}));
 
+// get all routes from index.js
+app.use(routes);
 
 app.use(errorHandler);
 

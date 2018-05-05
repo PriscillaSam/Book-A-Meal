@@ -2,12 +2,13 @@
 const errorHandler = (err, req ,res, next) => {
 
     if (Object.keys(err).length > 0) {
-      return res.status(err.status).json({
+      return res.status(400).json({
         err,
       });
     }  
 
-    return res.status(err.status).json({
+    return res.status(500).json({
+        status: err.status,
         err: err.message
     }); 
         

@@ -1,18 +1,25 @@
 import Joi from 'joi';
 import validate from 'express-validation';
- 
-const userSchema = {
-    register:Joi.object().keys({
-        name: Joi.string().required(),
-        email:Joi.email().required(),
-        password:Joi.string().required(),
-        usertype:Joi.any().required()
-    }),
 
-    login: Joi.object().keys({
-        email: Joi.email().required(),
-        password: Joi.password().required()
-    })
-};
+const email = Joi.string().email();
+const int = Joi.number().integer();
+const string = Joi.string();
 
-export default validate(userSchema);
+const validateSignUp = validate({
+    body: {
+        name: string.required(),
+        email: email.required(),
+        password: string.required(),
+        usertypeId: int.required()
+    }
+});
+
+const validateLogin = validate({
+    body: {  
+        email: email.required(),
+        password: string.required()
+    }
+});
+
+
+export default {validateSignUp, validateLogin};
