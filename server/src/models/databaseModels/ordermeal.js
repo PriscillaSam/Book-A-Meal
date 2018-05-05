@@ -1,7 +1,14 @@
+
+
 module.exports = (sequelize, DataTypes) => {
   const OrderMeal = sequelize.define('OrderMeal', {
-    mealId:DataTypes.INTEGER, 
-    orderId:DataTypes.INTEGER,   
+    mealId:{
+      type:DataTypes.INTEGER,
+    },
+    
+    orderId:{
+      type: DataTypes.INTEGER, 
+    }  
   });
   
   return OrderMeal;

@@ -1,11 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Meal = sequelize.define('Meal', {
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-      defaultValue: DataTypes.INTEGER
-    },
+    
     name: {
       type: DataTypes.STRING,
       allowNull: false
