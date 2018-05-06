@@ -11,7 +11,7 @@ env:
     - CC_TEST_REPORTER_ID=6a8e8207cb4d9f36061caa08ee3bd6584d55c378404543e8b10699946b6b58bf
     - NODE_ENV=test
 
-    before_script:
+before_script:
   - chmod 0777 ./node_modules/.bin/mocha
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -22,6 +22,6 @@ script:
   - npm run lint:server
   - npm run test
 
-after_script:
+after_success:
   - npm run coverage
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
