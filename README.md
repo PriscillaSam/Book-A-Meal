@@ -1,5 +1,5 @@
 # Book-A-Meal
-[![Coverage Status](https://coveralls.io/repos/github/PriscillaSam/Book-A-Meal/badge.svg?branch=master)](https://coveralls.io/github/PriscillaSam/Book-A-Meal?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/PriscillaSam/Book-A-Meal/badge.svg?branch=develop)](https://coveralls.io/github/PriscillaSam/Book-A-Meal?branch=develop)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bc2ce8130661adcb4ce9/test_coverage)](https://codeclimate.com/github/PriscillaSam/Book-A-Meal/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bc2ce8130661adcb4ce9/maintainability)](https://codeclimate.com/github/PriscillaSam/Book-A-Meal/maintainability)
 [![Build Status](https://travis-ci.org/PriscillaSam/Book-A-Meal.svg?branch=develop)](https://travis-ci.org/PriscillaSam/Book-A-Meal)
