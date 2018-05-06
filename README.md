@@ -1,7 +1,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/PriscillaSam/Book-A-Meal/badge.svg?branch=master)](https://coveralls.io/github/PriscillaSam/Book-A-Meal?branch=master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/bc2ce8130661adcb4ce9/test_coverage)](https://codeclimate.com/github/PriscillaSam/Book-A-Meal/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bc2ce8130661adcb4ce9/maintainability)](https://codeclimate.com/github/PriscillaSam/Book-A-Meal/maintainability)
 # Book-A-Meal
 
 ## Description
@@ -16,3 +16,5 @@ Some of the features include
 - Patronage statistics for vendors: Vendors are able to view daily orders and see what menu options are most prefered by customers.
 
 These and others are integrated into the application and heads up it's going to be blazingly fast.
+
+## Link to UI templates - https://priscillasam.github.io/Book-A-Meal/UI/html/index.html
