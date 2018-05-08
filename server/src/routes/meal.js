@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', MealController.getMeals);
 router.post('/',validateCreateMeal , MealController.addMeal);
-router.put('/:mealId',validateUpdateMeal, MealController.updateMeal);
-router.delete('/:mealId',validateMealId, MealController.removeMeal);
+router.put('/:id',validateUpdateMeal, MealController.updateMeal);
+router.delete('/:id',validateMealId, MealController.removeMeal);
 
 export default router;
