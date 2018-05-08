@@ -12,7 +12,7 @@ module.exports ={
     quantity: {
       type: Sequelize.INTEGER
     },
-    Amount: {
+    amount: {
       type: Sequelize.DECIMAL
     },   
     userId: {
@@ -22,6 +22,9 @@ module.exports ={
         model: 'Users',
         key: 'id'
       }
+    },
+    date: {
+      type: Sequelize.STRING
     },
     createdAt: {
       allowNull: false,

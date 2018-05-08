@@ -19,4 +19,11 @@ module.exports = {
   
   },
 
+  down: (queryInterface, Sequelize) => {
+    queryInterface.bulkDelete('UserTypes', [
+      { id: 1}, { id: 2},
+    
+    ], {});
+  }
+
 };
