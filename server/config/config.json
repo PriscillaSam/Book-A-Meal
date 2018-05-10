@@ -17,7 +17,7 @@
       "username": "postgres",
         "password": "admin1",
         "database": "Book-A-Meal",
-        "host": "localhost",
+        "host": "DATABASE_URL",
         "dialect": "postgres"
     }
   }

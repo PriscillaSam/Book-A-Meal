@@ -63,6 +63,7 @@ class MealController {
                 )
                 .then(updatedMeal => {
                     return res.status(200).json({
+                        updatedMeal,
                         status: 'success',
                         message: `meal with id ${updatedMeal.id} has been updated`
                     });
@@ -138,7 +139,7 @@ class MealController {
               
             return res.status(201).json({
                 status: 'Success',
-                message:`Meal added successfully. MealId - ${newMeal.id}`,
+                message:`Meal successfully added. MealId - ${newMeal.id}`,
     
             });             
     

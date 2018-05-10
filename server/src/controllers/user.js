@@ -1,119 +1,143 @@
 /* eslint consistent-return: 0 */
 
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import { User } from '../models/databaseModels';
-import config from '../../config/config';
+import { User, UserType } from '../models/databaseModels';
+import { generateToken } from '../middleware/authorize';
 
 /**
+ * @exports
  * @class User controller
  */
 class UserController {
     
     /** 
-     * Adds a new user to the database
+     * Registers a new user in the system
      * @method createUser 
-     * @param {object} request 
-     * @param {object} response
+     * @param {object} req 
+     * @param {object} res
      * @returns {object} newUser
      */
-    static registerUser(req, res) {
+    static async registerUser(req, res) {
+        
+        try{
 
-        const {
-            name,
-            email,
-            password,
-            usertypeId
-            } = req.body;
+            const {
+                name,
+                email,
+                password,
+                userTypeId
+                } = req.body;
+                
+            // check usertypeId
+            const userType = await UserType.findOne({ where: {id: userTypeId}});   
+            if(!userType) {
+                return res.status(404).json({
+                    status: 'Error',
+                    message: 'Ooops!!! This usertype does not exist'
+                });
+            }
+            const userExists = await UserController.checkUserExists(email, res);
 
-        const typeId = parseInt(usertypeId, 10);   
-        const passHash = bcrypt.hashSync(password, 10);
-        User.create({
-            name,
-            email,
-            password: passHash,
-            typeId
-        })
-        .then(newUser => { 
-            const token = UserController.generateToken(newUser);
+            if(userExists) {
+                return res.status(409).json({
+                    status: 'error',
+                    message: 'this user already exists'
+                });
+            }
+    
+            const typeId = parseInt(userTypeId, 10);   
+            const passHash = bcrypt.hashSync(password, 10);
+            const newUser = await User.create({
+                                        name,
+                                        email,
+                                        password: passHash,
+                                        userTypeId: typeId
+                                    });
+                      
+            const token = generateToken(newUser);
             res.status(201).json({
                     status: 'success',
-                    message: `User with userId ${newUser.id} successfully created`,
+                    message: `Hello ${newUser.name}. Welcome to Book-A-Meal. Your account has been created.`,                    
                     token
                 });
+
+        } catch(error)  {
+            console.log(error);
+            res.status(500).json({
+                status: 'error',
+                message: error.message
+            });
         
-        });
+        }
     }
 
     /**
-     * 
+     * Performs Login operation
      * @param {object} req Request object containing user email and password
-     * @param {json} res  Response object indicating if login is successful
+     * @param {json} res  Response object indicating whether login is successful or not
      */
-    static loginUser(req, res) {
+    static async loginUser(req, res) {
 
-        const { email, password } = req.body;
+        try{
+            const { email, password } = req.body;
 
-        User.findOne({
-            where: { email }
-        })
-        .then(user => {
+            const user = await UserController.checkUserExists(email, res);
+
             if(!user) {
                 return res.status(404).json({
                     status: 'error',
-                    message: 'failed to authenticate user'
+                    message: 'Sorry, we can\'t find you. You need to sign up first'
                 });
-            }
-
-            const userValid = bcrypt.compareSync(password, user.password);
-
-            if(!userValid) {
+            }            
+                
+            const isUserValid = bcrypt.compareSync(password, user.password);
+    
+            if(!isUserValid) {
                 return res.status(401).json({
                     status: 'error',
                     message: 'failed to authenticate user'
                 });
-             
+                
             }
-            const token = UserController.generateToken(user);
+            const token = generateToken(user);
 
             res.status(200).json({
-                authorized: true,
+                authenticated: true,
                 message:'User login successful',
                 token
+            });    
+            
+        } catch(error) {
+            return res.status(500).json({
+                status: 'error',
+                message: error.message
             });
-
-         });
-
+        }      
 
         
     }
 
+
     /**
-     * Generates a json web token
-     * @param {Object} user The registered or logged in user
+     * checks if user already exists via email
+     * @param {string} email  user email 
+     * @param {object} res Response object
+     * @param {function} next function that calls next middleware down the chain
      */
-    static generateToken(user) {
-
-        const {
-            id,
-            name,
-            email,
-            usertypeId
-        } = user;
-
-        const jwtPayload = {
-          id,
-          name,
-          email,
-          usertypeId
-        };
-    
-        const jwtData = {
-            expiresIn: 86400
-        };
-    
-        return jwt.sign(jwtPayload, config.secretKey, jwtData);        
-
+     static async checkUserExists  (email, res, next ) {      
+        
+            try{
+                const user = await User.findOne({
+                    where: {
+                        email
+                    }
+                });
+                
+                return user;
+            } catch(error){
+                next(error);
+            }     
+      
     }
 
 

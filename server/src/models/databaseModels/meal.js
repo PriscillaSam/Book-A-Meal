@@ -25,11 +25,10 @@ module.exports = (sequelize, DataTypes) => {
     Meal.belongsToMany(models.Menu, {
       through: models.MealMenu,
       foreignKey: 'mealId',
-      onDelete: 'CASCADE'
+      onDelete: 'SET NULL'
     });
 
-    Meal.belongsToMany(models.Order, {
-      through: models.OrderMeal,
+    Meal.hasMany(models.Order, {
       foreignKey: 'mealId',
       onDelete: 'CASCADE'
     });

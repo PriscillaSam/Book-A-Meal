@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DECIMAL,
       allowNull: false
     },
+    mealId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     date: {
       type: DataTypes.STRING,
       allowNull: false
@@ -24,13 +32,18 @@ module.exports = (sequelize, DataTypes) => {
 
   Order.associate = (models) => {
     // associations can be defined here
-    Order.belongsToMany(models.Meal, {
-      through: models.OrderMeal,
-      foreignKey: 'orderId',
+    Order.belongsTo(models.User, {
+      foreignKey: 'userId',
       onDelete: 'CASCADE'
     });
     
+    Order.belongsTo(models.Meal, {
+      foreignKey:'mealId',
+      onDelete:''
+    });
   };
+
+  
 
   return Order;
 };

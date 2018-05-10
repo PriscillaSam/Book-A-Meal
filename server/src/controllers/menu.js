@@ -26,7 +26,7 @@ class MenuController {
                             }   
                         });
         if(menu) {
-            return res.status(400).send({
+            return res.status(400).json({
                 status:'error',
                 message:'A menu already exists for today'
             });

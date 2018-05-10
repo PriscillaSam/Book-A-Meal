@@ -23,5 +23,5 @@ const jwtData = {
 
 // const token = jwt.sign(jwtPayload, config.secretKey, jwtData);
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlclR5cGVJZCI6MSwiaWF0IjoxNTI1ODk2MjA3LCJleHAiOjE1MjU5ODI2MDd9.bvVvk8V-3U94Moo17mXU3ZZ3cUybR6vgnPUJZ9Pdo-U";// jwt.sign(jwtPayload, config.secretKey, jwtData);
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlclR5cGVJZCI6MSwiaWF0IjoxNTI1OTU4NjA5LCJleHAiOjE1MjYwNDUwMDl9.zesrrBSkxsSU5lmlOBNckqQ1VGymRUdp_p2oK2XO8jQ";// jwt.sign(jwtPayload, config.secretKey, jwtData);
 export default token;

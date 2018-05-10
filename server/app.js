@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+
 // get all routes from index.js
 app.use(routes);
 

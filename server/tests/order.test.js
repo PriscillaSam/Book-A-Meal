@@ -10,17 +10,6 @@ chai.use(chaiHttp);
 should();
 const orderRoute = 'api/v1/orders/';
 
-// before((done) => {
-//     models.sequelize.sync({
-//         force: true
-//     })
-//     .then(() => {
-//         done(null);
-//     })
-//     .catch((error)  => {
-//         done(error);
-//     });
-// });
 
 describe('Get Orders method in Order Controller', () => {
     const todayOrders = orders.filter(o => o.date === '2018-3-14');    
@@ -144,16 +133,3 @@ describe('Update Order method of the order controller', () => {
             });
     }); 
 });
-
-
-// describe('Get user Orders in order controller', () => {
-//     it('Should return status code of 200 if orders sre gotten', (done) => {
-//         chai.request(app)
-//             .get('/api/v1/1/orders/')
-//             .end((err, res) => {
-//                 if(err) done(err);
-//                 res.should.have.status(200);
-//                 done();
-//             });
-//     });
-// });

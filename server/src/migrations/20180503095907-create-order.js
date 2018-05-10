@@ -23,6 +23,14 @@ module.exports ={
         key: 'id'
       }
     },
+    mealId: {
+      type: Sequelize.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Meals',
+        key: 'id'
+      }
+    },
     date: {
       type: Sequelize.STRING
     },
