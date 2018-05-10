@@ -3,9 +3,22 @@ import chaiHttp from 'chai-http';
 import app from '../app';
 import {should} from 'chai';
 import { Menu, Meal} from '../src/models/databaseModels';
+import models from '../src/models/databaseModels/index';
 
 chai.use(chaiHttp);
 should();
+
+// before((done) => {
+//     models.sequelize.sync({
+//         force: true
+//     })
+//     .then(() => {
+//         done(null);
+//     })
+//     .catch((error)  => {
+//         done(error);
+//     });
+// });
 
 const testMenu = {
     date: new Date(),

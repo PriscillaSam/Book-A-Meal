@@ -1,4 +1,5 @@
 /* eslint no-unused-vars: 0 */
+const password = '$2a$10$4Wm6HHl9EMfd46UkP4pUEuiw2rHg.sgpuqIHtXi88nF.lr4JENvs2';
 module.exports = {
   up: (queryInterface, Sequelize) => {
     
@@ -7,7 +8,7 @@ module.exports = {
           id: 1,
           name: 'John Doe',
           email: 'johndoe@gmail.com',
-          password:'password',
+          password,
           userTypeId: 2,
           createdAt: new Date(),
           updatedAt: new Date()  
@@ -17,7 +18,7 @@ module.exports = {
           name: 'Priscilla Doe',
           email: 'priscilladoe@gmail.com',
           userTypeId: 2,
-          password:'password',
+          password,
           createdAt: new Date(),
           updatedAt: new Date() 
         },
@@ -25,7 +26,7 @@ module.exports = {
           id: 3,
           name: 'Daniel Doe',
           email: 'danieldoe@gmail.com',
-          password:'password',
+          password,
           userTypeId: 2,
           createdAt: new Date(),
           updatedAt: new Date() 
@@ -34,7 +35,7 @@ module.exports = {
           id: 4,
           name: 'Michael Doe',
           email: 'michaeldoe@gmail.com',
-          password: 'password',
+          password,
           userTypeId: 1,
           createdAt: new Date(),
           updatedAt: new Date() 

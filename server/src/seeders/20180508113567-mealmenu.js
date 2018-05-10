@@ -33,7 +33,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
   
-     queryInterface.bulkDelete('Person', [
+     queryInterface.bulkDelete('MealMenus', [
         { id: 1 }, { id: 2 }, {id: 3}
         
       ], {});

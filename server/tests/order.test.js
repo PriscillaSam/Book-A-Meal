@@ -2,11 +2,25 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import {should} from 'chai';
 import app from '../app';
-import orders from '../src/models/dummyModels/order';
+import { Order } from '../src/models/databaseModels';
+import models from '../src/models/databaseModels/index';
+import token from './setup';
+
 chai.use(chaiHttp);
 should();
+const orderRoute = 'api/v1/orders/';
 
-import Order from '../src/controllers/order';
+// before((done) => {
+//     models.sequelize.sync({
+//         force: true
+//     })
+//     .then(() => {
+//         done(null);
+//     })
+//     .catch((error)  => {
+//         done(error);
+//     });
+// });
 
 describe('Get Orders method in Order Controller', () => {
     const todayOrders = orders.filter(o => o.date === '2018-3-14');    
@@ -47,10 +61,9 @@ describe('Make Order method in order controller', () => {
         amount: 5000
     };
 
-
     it('Returns status 201 if order is successful', (done) => {
         chai.request(app)
-            .post('/api/v1/orders/')
+            .post(orderRoute)
             .send(goodOrder)
             .end((err, res) => {
                 if(err) done(err);
@@ -62,7 +75,7 @@ describe('Make Order method in order controller', () => {
 
     it('Returns status code 400 if parameters are supplied incorrectly', (done) => {
         chai.request(app)
-            .post('/api/v1/orders/')
+            .post(orderRoute)
             .send(badOrder)
             .end((err, res) => {
                 if(err) done(err);
@@ -70,6 +83,29 @@ describe('Make Order method in order controller', () => {
                 res.should.be.json;               
                 done();
             });
+    });
+
+    it('Returns an error message if user does not exist', (done) => {
+
+        chai.request(app)
+            .post(orderRoute)
+            .set('authorization', token)
+            .send({
+                userId:3,
+                mealId: 2,
+                quantity:3,
+                amount: 5000
+            })
+            .end((err, res) => {
+                if(err) done(err);
+                res.should.have.status(404);
+                res.body.should.deep.equal({
+                    status: 'Error',
+                    message: 'This user does not exist'
+                });
+                res.body.should.be.an('object');
+                res.body.status.should.e
+            })
     });
 });
 
