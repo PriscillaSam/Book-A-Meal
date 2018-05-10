@@ -1,16 +1,16 @@
 import Joi from 'joi';
 import validate from 'express-validation';
 
-const email = Joi.string().email();
+const email = Joi.string().trim().email();
 const int = Joi.number().integer();
-const string = Joi.string();
+const string = Joi.string().trim();
 
 const validateSignUp = validate({
     body: {
         name: string.required(),
         email: email.required(),
         password: string.required(),
-        usertypeId: int.required()
+        userTypeId: int.required()
     }
 });
 
