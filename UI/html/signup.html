@@ -56,25 +56,28 @@
                                 <hr style="clear: both;">             
     
                                 <!--Beginning of form-->
-                            <form action="post" enctype="text/plain" name="signup">
+                            <form action="./caterer/home.html" enctype="text/plain" name="signup">
                                 <div class="form-group">
                                         <div class="form-input">
-                                                <input type="text" name="Name" value="" placeholder="Enter Your Name" class="form-control"/>
+                                                <input type="text" name="Name" value="" placeholder="Enter Your Name" class="form-control" required/>
                                             </div>
                                             <div class="form-input">
-                                                    <input type="text" name="Email" value="" placeholder="Enter Your Email" class="form-control"/>
+                                                    <input type="email" name="Email" value="" placeholder="Enter Your Email" class="form-control" required/>
                                             </div>
                                             <div class="form-input">
-                                                    <input type="password" name="Password" value="" placeholder="Enter Your Password" class="form-control"/>
+                                                    <input type="password" name="Password" value="" placeholder="Enter Your Password" class="form-control" required/>
                                             </div>
                                             <div class="form-input">
-                                                <select id="UserType" name="UserType" class="form-control">
+                                                    <input type="password" name="ConfirmPassword" value="" placeholder="Confirm Your Password" class="form-control" required/>
+                                            </div>
+                                            <div class="form-input">
+                                                <select id="UserType" name="UserType" class="form-control" required>
                                                     <option value="">Select User Type</option>
                                                     <option value="Customer">Customer</option>
                                                     <option value="Caterer">Caterer</option> 
                                                </select>
                                             </div>
-                                            <button class="btn btn-green">Submit</button>
+                                            <button id="submit" class="btn btn-green">Register<a href="./customer/home.html"></a></button>
                                 </div>                               
         
                             </form>
@@ -87,8 +90,10 @@
     </section>
     <footer class="foot ">        
         <div class="page-footer">
-            <p class="center marg-top50">Copyright 2018</p>
+                <p class="center marg-top50">Book-A-Meal 2018 &copy;AliusDei</p>
         </div>
     </footer>
+   
+   
     </body>
-    </html>
+</html>

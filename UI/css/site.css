@@ -3,6 +3,14 @@
     src: url('../assets/open_sans.woff2'),
     url('Open_sans.woff') format('woff')
 }
+/*  */
+/* @media screen and (max-width:600px) {
+    .col{
+        width: 50%;
+    } */
+    /* .inner-wrapper{
+        width: 100%;
+    } */
 
 /*General styles*/
 body,
@@ -36,7 +44,7 @@ li{
  margin-right: 20px;
 }
 .nav-link{
-    color:#BDBDBD;
+    color:rgb(100, 99, 99);
 
 }
 .nav-link:hover{
@@ -65,6 +73,9 @@ color: #009688;
 }
 .marg-bot30{
     margin-bottom: 30px;
+}
+.marg-bot20{
+    margin-bottom: 20px;
 }
 
 .pad-bot20{
@@ -113,6 +124,7 @@ text-align: center;
     left:25%;
 
     min-height: 200px;
+    padding-bottom: 30px;
     background: rgba(227, 231, 228,0.6);
 }
 
@@ -157,20 +169,25 @@ text-align: center;
 
 /*Button styles*/
 .btn{
-    min-width: 100px;
-    padding: 7px;
+    min-width: 50px;
+    padding: 5px;
     color: white;
     border-radius: 3px;
     border:none;
     cursor: pointer;
 }
-
+.btn-lg{
+    width: 100px;
+}
 .btn-outline-green:hover{
     background-color: #009688;
     color: white;
 
 }
 
+.btn-small{
+    padding: 5px;
+}
 .btn-green{
     background-color: #009688;
 }
@@ -224,10 +241,11 @@ textarea{
 }
 .inner-wrapper{
     position: absolute;
-    top:15%;
+    top:5%;
     left:35%;
+    width: 30%; 
+    opacity:0.9;
 
-    width: 30%;    
 }
 
 select{
@@ -278,12 +296,23 @@ select{
 .med-text {
     font-size: 18px;
 }
-
+.sm-text{
+    font-size: 14px;
+}
 .text-green{
     color:#009688;
 }
-
+.text-red{
+    color: red;
+}
 .col-grid{
     column-count: 3;
 }
 
+#close{
+    cursor: pointer;
+    font-size: 20px;
+}
+#close:hover{
+    color:black;
+}

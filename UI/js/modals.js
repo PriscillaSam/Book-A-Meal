@@ -27,13 +27,5 @@ confirmBtn.addEventListener('click', (e) => {
     confirmModal.style.display = 'block';
 });
 
-function deleteBtn(item) {
-    item.addEventListener('click', () => {
 
-        if(confirm('Are you sure you want to remove this meal option')) {
-            alert('This meal has been deleted');
-        }   
-
-    });
-};
 

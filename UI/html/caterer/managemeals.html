@@ -8,8 +8,9 @@
     
         <link rel="stylesheet" href="../../css/site.css">
         <link rel="stylesheet" type="text/css" href="../../css/user.css" />
+        <link rel="stylesheet" href="../../css/modals.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
     <body>
         <section>
@@ -21,7 +22,7 @@
                             Book<span>-A-</span>Meal               
         
                             </a>    
-                            <span class="center blue user-label"><a href="home.html">Caterer</a></span> 
+                            <span class="center red user-label"><a href="home.html">Caterer</a></span> 
            
                         </h1> 
                         <hr>
@@ -54,10 +55,10 @@
                                         </a>
                                     </li>
                                 <li class="side-nav-link center">
-                                    <a href="" class="nav-link">
-                                        Log out  
-                            
-                                    </a>
+                                        <a href="../login.html" class="nav-link">
+                                            Log out  
+                                  
+                                          </a>
                                 </li>
                             </ul>
                         </div>
@@ -77,7 +78,10 @@
                                         <p class="clear"></p>
                                     </div>
                                 </div>
-
+                                <div class="panel white marg-top20 " id="help" style="display: none;">
+                                        <span id="close" class="right closeBtn" title="Close Notification"><strong>&times;</strong></span>
+                                        <p class="text-red center" >Meal successfully removed</p>
+                                    </div>
                                 <div class="panel white marg-top20">
                                     <table class="tbl">
                                         <thead class="tbl-header"> 
@@ -94,8 +98,10 @@
                                                 <td>&#8358;1,500</td>
                                                 <td>An excellent meal</td>
                                                 <td>
-                                                    <a href="edit.html" class="btn btn-green marg-right10">Edit</a>
-                                                    <a href="" class="btn btn-red delete">Delete</a>
+                                                        
+                                                    <a href="edit.html" title="edit meal" class="marg-right10"><i class="fa fa-pencil fa-2x text-green"></i></a>
+                                                    <a href="" title="delete meal" class="marg-right10"><i class="fa fa-trash delete text-red fa-2x"></i></a>
+                                                            
                                                 </td>
                                             </tr>
                                       
@@ -104,8 +110,10 @@
                                                 <td>&#8358;2,500</td>
                                                 <td>An excellent meal</td>
                                                 <td>
-                                                    <a href="edit.html" class="btn btn-green marg-right10">Edit</a>
-                                                    <a href="" class="btn btn-red delete">Delete</a>
+                                                    
+                                                    <a href="edit.html" title="edit meal" class="marg-right10"><i class="fa fa-pencil fa-2x text-green"></i></a>
+                                                    <a href="" title="delete meal" class="marg-right10"><i class="fa fa-trash text-red delete fa-2x"></i></a>
+                                                            
                                                 </td>
                                             </tr>
                                             <tr>
@@ -113,8 +121,8 @@
                                                 <td>&#8358;2,000</td>
                                                 <td>An excellent meal</td>
                                                 <td>
-                                                    <a href="edit.html" class="btn btn-green marg-right10">Edit</a>
-                                                    <a href="" class="btn btn-red delete">Delete</a>
+                                                    <a href="edit.html" title="edit meal" class="marg-right10"><i class="fa fa-pencil fa-2x text-green"></i></a>
+                                                    <a href="" title="delete meal" class="marg-right10"><i class="fa fa-trash text-red delete fa-2x"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -122,8 +130,10 @@
                                                 <td>&#8358;1,500</td>
                                                 <td>An excellent meal</td>
                                                 <td>
-                                                    <a href="edit.html" class="btn btn-green marg-right10">Edit</a>
-                                                    <a href="" class="btn btn-red delete">Delete</a>
+                                                        
+                                                    <a href="edit.html" title="edit meal" class="marg-right10"><i class="fa fa-pencil fa-2x text-green"></i></a>
+                                                    <a href="" title="delete meal" class="marg-right10"><i class="fa fa-trash delete text-red fa-2x"></i></a>
+                                                            
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -131,21 +141,26 @@
                                 </div>
                             </div>
                     </div>
-        
+                    <div class="modal" id="confirm">
+                            <div class="panel white col modal-content">
+                                <span class="closeBtn" id="closeModal"><strong>&times;</strong></span>
+                                <h3 class="center panel-title">CONFIRM</h3>
+                                <hr>
+                                <p class="center marg-bot20">Are you sure you want to remove this meal permanently?</p>
+                                <div class="" style="margin-left: 120px">
+                                        <a class="btn btn-red marg-right20" id="confirmBtn" >Delete</a>
+                                        <a class="btn btn-green" id="cancelBtn" >Cancel</a>
+                                </div>
+                                
+                            </div>
+                     </div>
          </section>
          <footer class="foot">        
                 <div class="page-footer">
-                    <p class="center marg-top50">Copyright 2018</p>
-                </div>
+                        <p class="center marg-top50">Book-A-Meal 2018 &copy;AliusDei</p>
+                    </div>
         </footer>
-        <script src="../../js/modals.js"></script>
-        <script>
-            const delBtn = document.querySelectorAll('.delete');
-            delBtn.forEach(btn => {
-                deleteBtn(btn);
-            });
-
-        </script>
+        <script src="../../js/meal.js"></script>
     </body>
                     
 </html>

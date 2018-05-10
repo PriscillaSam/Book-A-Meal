@@ -22,7 +22,7 @@
                     Book<span>-A-</span>Meal               
 
                     </a>  
-                    <span class="center blue user-label"><a href="home.html">Caterer</a></span> 
+                    <span class="center red user-label"><a href="home.html">Caterer</a></span> 
              
                 </h1> 
                 <hr>
@@ -55,10 +55,10 @@
                             </a>
                         </li>
                     <li class="side-nav-link center">
-                        <a href="" class="nav-link">
-                          Log out  
-                
-                        </a>
+                            <a href="../login.html" class="nav-link">
+                                Log out  
+                      
+                              </a>
                     </li>
                 </ul>
               </div>
@@ -77,7 +77,8 @@
                         </div>
                      
                     </div>
-                    <div class="panel white marg-top20">
+                    <div class="panel white marg-top20 " id="help">
+                        <span id="close" class="right" title="Close Notification">x</span>
                         <p class="text-green">How to: Let's help you get started. There's a list of meal options that You can choose from to make up your menu.
                     . Have fun!!!</p>
                     </div>
@@ -127,14 +128,8 @@
                                 </div>                                                         
                             </div> 
                             <div class="marg-top10">
-                            <button class="btn btn-green">Save</button> 
-                            </div>           
-                                        
-                                                        
-                            
-                            
-                                
-                                </div>
+                            <button class="btn btn-lg btn-green">Save</button> 
+                        
                        
                     </div>
                 </div>
@@ -143,10 +138,18 @@
         
     </div>
     <script src="../../js/main.js"></script>
+    <script>
+        const closeBtn = document.getElementById('close');
+        const modal = document.getElementById('help');
+        closeBtn,addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    
+    </script>
 </section>
 <footer class="foot">
         <div class="page-footer">
-            <p class="center">Copyright 2018</p>
+                <p class="center marg-top50">Book-A-Meal 2018 &copy;AliusDei</p>
         </div>
     </footer>
     </body>

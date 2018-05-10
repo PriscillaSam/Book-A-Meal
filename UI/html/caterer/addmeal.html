@@ -22,7 +22,7 @@
                     Book<span>-A-</span>Meal               
 
                     </a> 
-                    <span class="center blue user-label"><a href="home.html">Caterer</a></span> 
+                    <span class="center red user-label"><a href="home.html">Caterer</a></span> 
               
                 </h1> 
                 <hr>
@@ -55,7 +55,7 @@
                             </a>
                         </li>
                     <li class="side-nav-link center">
-                        <a href="" class="nav-link">
+                        <a href="../login.html" class="nav-link">
                           Log out  
                 
                         </a>
@@ -71,30 +71,29 @@
                         <div class="" >
                             <h1 class="panel-title">
                                     Add A Meal
-                                </h1>
-                            
+                                </h1>                            
                         </div>
                     </div>
                            <!--Add a meal form begins here-->
                 <div class="panel white marg-top20">
-                    <div class="form-col pad20 col">
-                        <h3 class="center form-title" style="border-bottom: 1px solid #BDBDBD;padding: 5px; ">Add A Meal</h3>
+                    <div class="form-col pad20 col2" style="margin:auto">
+                        <h3 class="center form-title" style="border-bottom: 1px solid #BDBDBD;padding: 5px; ">Enter meal details</h3>
                         <div class="form-group" >
-                            <form action="post" name="CreateMeal">
+                            <form action="./managemeals.html" name="CreateMeal">
                                 <div class="form-input">
-                                    <input type="text" name="Name" class="form-control" placeholder="Meal Name" />
+                                    <input type="text" name="Name" class="form-control" placeholder="Meal Name" required/>
         
                                 </div>
                                 <div class="form-input">
-                                    <input type="text" name="Price" class="form-control" placeholder="Meal Price" />
+                                    <input type="number" name="Price" class="form-control" placeholder="Meal Price" required/>
         
                                 </div>
                                 <div class="form-input">
-                                    <textarea class="form-control" cols="20" placeholder="Meal Description"></textarea>
+                                    <textarea class="form-control" cols="20" placeholder="Meal Description" required></textarea>
                                 </div>
                                 
                                 <div class="form-input">
-                                    <button class="btn btn-green">Add Meal</button>
+                                    <button class="btn btn-lg btn-green">Add Meal</button>
 
                                 </div>
                                            
@@ -108,7 +107,7 @@
 </section><!--End of section-->
 <footer class="foot">
         <div class="page-footer marg-top50">
-            <p class="center">Copyright 2018</p>
+                <p class="center marg-top50">Book-A-Meal 2018 &copy;AliusDei</p>
         </div>
 </footer>
 </body>

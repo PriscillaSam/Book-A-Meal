@@ -1,8 +1,17 @@
+/*Media queries*/
+/* @media screen and (max-width:992px) {
+    .col{
+        width: 50%;
+    }
+} */
+
+
 .user-label{
     border-radius: 6px;
     width:50px;
     font-size: 12px;
     padding: 2px;
+    margin-bottom: 10px;
 }
 
 .user-label a{
@@ -14,7 +23,7 @@
 }
 
 .side-bar{
-    width: 20%;
+    width: 15%;
    padding:0 0 20px 20px;
 }
 .side-bar ul{
@@ -102,7 +111,7 @@
 /*Table styling*/
 .tbl{
     width: 100%;
-    table-layout: fixed;
+    table-layout: auto;
 
     border-spacing: 10px;
     border: 1px solid #eee;
@@ -114,27 +123,36 @@
     letter-spacing: 1px;
 }
 
-tr{
-    text-align: center;
+tbody tr{
+    text-align: left;
 }
-
+th{
+    font-size: 16px;
+    text-align: left;
+}
+td{
+    font-size: 13px;
+}
 th, td{
-    padding:10px;
-    font-size: 14px;
+    padding:14px;
 }
 
 .tbl tbody tr:hover{
     background-color: #4DB6AC;
     color:white;
 }
+.tbl tbody tr:hover i{
+    color: white;
+}
   td .btn{
-      padding:2px 5px;
+      padding:10px;
       font-size: 13px;
   }
 .p-title{
     border: 1px solid #eee;
     padding: 5px;    
 }
+
 
 .tbl-email{
     color: black;
@@ -144,4 +162,7 @@ th, td{
     text-decoration-line: underline;
 }
 
- 
+ /*Font weights*/
+ .bold1{
+     font-weight: bold;
+ }
