@@ -14,11 +14,7 @@
         "dialect": "postgres"
     },
     "production": {
-      "username": "postgres",
-        "password": "admin1",
-        "database": "Book-A-Meal",
-        "host": "DATABASE_URL",
-        "dialect": "postgres"
+      "use_env_variable":"DATABASE_URL"      
     }
   }
   
