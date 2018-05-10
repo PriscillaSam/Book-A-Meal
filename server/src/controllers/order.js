@@ -1,7 +1,7 @@
 /* eslint consistent-return: 0 */
 
 import moment from 'moment';
-import {Order, Menu, Meal, User } from '../models/databaseModels';
+import { Order, Menu, Meal, User } from '../models/databaseModels';
 /**
  * @class Order Controller
  */
@@ -87,6 +87,7 @@ class OrderController {
         const orderId = parseInt(req.params.orderId, 10);
 
         // check if order exists
+        const order = Order.findOne({ where:})
         const order = orders.find(o => o.orderId === orderId);
         const orderIndex = orders.findIndex(o => o.orderId === orderId);
 
@@ -106,11 +107,7 @@ class OrderController {
         };
 
         // remove former order and replace with the new
-        orders.splice(orderIndex, 1, updatedOrder);
-        return res.status(200).send({
-            status:'success',
-            message: 'order successfully updated'
-        });
+      
 
 
     }
