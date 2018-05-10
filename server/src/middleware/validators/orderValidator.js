@@ -8,7 +8,7 @@ const validateOrderCreate = validate({
         userId: idRule.required(),
         mealId: idRule.required(),
         quantity: idRule.required().default(1),
-        amount: Joi.number().positive()
+        amount: idRule.required()
     }
 });
 
@@ -21,7 +21,7 @@ const validateOrderUpdate = validate({
         userId: idRule.required(),
         mealId: idRule.required(),
         quantity: idRule.required().default(1),
-        amount: Joi.number().positive()
+        amount: idRule.required()
     }
 });
 

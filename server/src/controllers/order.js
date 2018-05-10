@@ -1,44 +1,80 @@
-import orders from '../models/order';
+/* eslint consistent-return: 0 */
 
+import moment from 'moment';
+import {Order, Menu, Meal, User } from '../models/databaseModels';
 /**
  * @class Order Controller
  */
-class Order {
+class OrderController {
 
     /**
      * @method makeOrder
      * @param {object} req 
      * @param {object} res 
      */
-    static makeOrder(req,res) {
-        const {            
-            userId,
-            mealId,
-            quantity,
-            amount,            
-        } = req.body;
+    static async makeOrder(req,res) {
+        
+        try{
 
-        if(!userId || !mealId) {
-            return res.status(400).send({
-                status: 'error',
-                message: 'Incomplete parameters supplied'
+            const {            
+                userId,
+                mealId,
+                quantity,
+                amount,            
+            } = req.body;
+    
+            if(!userId || !mealId) {
+                return res.status(400).send({
+                    status: 'error',
+                    message: 'Incomplete parameters supplied'
+                });
+            }
+                const date = moment().format('MMMM Do YYYY');
+                // check if menu exists
+                const menu = await Menu.findOne({ where: { date }});
+                if(!menu) {
+                    res.status(404).json({
+                        status: 'Error',
+                        message: 'The menu for today has not been set yet. Please be patient'
+                    });
+                }
+                // check if user exists
+                const user = await User.findOne({ where: {id: userId}});
+                // check if meal exists
+                const meal = await Meal.findOne({ where: { id: mealId }});
+                if(!user) {
+                    return res.send(404).json({
+                        status: 'Error',
+                        message: 'This user does not exist'
+                    });
+                }
+                if(!meal) {
+                    return res.status(404).json({
+                        status: 'Error',
+                        message: 'This meal does not exist'
+                    });
+                }
+    
+                await Order.create({
+                                date,
+                                mealId,
+                                userId,
+                                quantity,
+                                amount
+                            });
+
+                                            
+            return res.status(201).send({
+                status:'success',
+                message:`Your Order was successful. You ordered for ${meal.name}`
+            });
+        } catch(error) {
+            res.status(500).json({
+                status: 'Error',
+                message: error.stack
             });
         }
-
-        const newOrder = {
-            orderId: orders[orders.length - 1].orderId + 1, 
-            userId,
-            mealId,
-            quantity,
-            amount,
-        };
-
-        orders.push(newOrder);
-
-        return res.status(201).send({
-            status:'success',
-            message:'Order successful'
-        });
+        
     }
 
     /**
@@ -143,5 +179,5 @@ class Order {
 
 }
 
-export default Order;
+export default OrderController;
 

@@ -2,56 +2,87 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
 import {should} from 'chai';
-import meals from '../src/models/meal';
-import menus from '../src/models/menu';
+import { Menu, Meal} from '../src/models/databaseModels';
+import models from '../src/models/databaseModels/index';
 
 chai.use(chaiHttp);
 should();
 
+// before((done) => {
+//     models.sequelize.sync({
+//         force: true
+//     })
+//     .then(() => {
+//         done(null);
+//     })
+//     .catch((error)  => {
+//         done(error);
+//     });
+// });
 
-describe('Set Menu in menu Controller', () => {
-
-    const newMenu = {
-        userId: 1,
-        menuMeals: [ meals[0],meals[1] ],
-        date: '2018-4-30'
-    };
-
-    it('Should return status 200 if menu is successfully set', (done) => {
-        chai.request(app)
-            .post('/api/v1/menu')
-            .send(newMenu)
-            .end((err, res) => {
-                if(err) done(err);
-                res.should.have.status(201);
-                done();
-            });
-
-
-    });
-
-    it('Should add the new menu to the menu list', (done) => {
-        const menuLength = menus.length;
-        chai.request(app)
-            .post('/api/v1/menu')
-            .send(newMenu)
-            .end((err, res) => {
-                if(err) done(err);
-                menus.should.have.lengthOf(menuLength + 1);
-                done();
-            });
-    });
-});
-
+const testMenu = {
+    date: new Date(),
+    mealIds: [1,2,3]
+};
 describe('Get menu method in Menu Controller', () => {
-    it('should return status of 200 if menu is successfully gotten', (done) => {
-        chai.request(app)
-            .get('/api/v1/menu/')
-            .end((err, res) => {
-                if(err) done(err);
-                res.should.have.status(200);
-                done();
+
+        it('Returns an error 404 if menu has not been set', (done) => {
+            chai.request(app)
+                .get('/api/v1/menus')
+                .end((err, res) => {
+                    if(err) done(err);
+                    res.should.have.status(404);
+                    res.body.should.deep.equals({
+                        status: 'no content',
+                        message: 'no menu yet for today'
+                    });
+                    done();
+                });
+    
+        });
+           
+        it('Should return status 200 if menu is successfully set', (done) => {
+            chai.request(app)
+                .post('/api/v1/menus')
+                .send(testMenu)
+                .end((err, res) => {
+                    if(err) done(err);
+                    res.should.have.status(201);
+                    done();
+                });
             });
 
+       
+
+        it('should return status of 200 if menu is successfully gotten', (done) => {
+            chai.request(app)
+                .get('/api/v1/menus/')
+                .end((err, res) => {
+                    if(err) done(err);
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    done();
+                });
+    
+        });
+    
+});
+  
+describe('POST api/v1/menus',  () => {  
+
+    it('Should return an error when a menu already exists', (done) => {
+        chai.request(app)
+            .post('/api/v1/menus')
+            .send(testMenu)
+            .end((err, res) => {
+                if(err) done(err);
+                res.should.have.status(400);
+                res.body.should.deep.equals({
+                    status:'error',
+                    message:'A menu already exists for today'
+                });
+                done();
+
+            });
     });
 });

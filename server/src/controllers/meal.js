@@ -1,128 +1,156 @@
-import meals from '../models/meal';
+import { Meal } from '../models/databaseModels';
 
 /**
-*
+* @exports
 * @class MealController
 *
 */
-class Meal {
+class MealController {
 
     /**
-     * @returns {Object} meals
-     * @param {*} req 
-     * @param {*} res 
+     * Gets all meals from the database
+     * @returns {Object} 
+     * @param {object} req Request object
+     * @param {object} res Response object
      */
-    static getMeals(req,res) {
-        return res.status(200).send({
-            meals,
-            message:'meals successfully gotten'
-        });
+    static getMeals(req, res) {
+        
+        Meal.findAll()
+            .then(meals => {
+
+                if(!meals) {
+                    return res.status(400).json({
+                        status: 'error',
+                        message: ''
+                    });
+                }
+                return res.status(200).json({
+                    status: 'success',
+                    message: 'meals successfully gotten',
+                    meals 
+                });
+                
+            })
+            .catch(err =>  res.status(500).json({
+                    error: err.stack,
+                })
+            );
     } 
     
 /**
+ * Updates an existing meal
  * @method updateMeal
  * @param {object} req
  * @param {object} res 
+ * @returns An Object with response status and message indicating update success
  */
     static updateMeal(req , res) {
         // get mealid
-        const mealId = parseInt(req.params.mealId, 10);
+        const mealId = parseInt(req.params.id, 10);
         // Check that it is available
-        const meal = meals.find(m => m.mealId === mealId);
-        const mealIndex = meals.findIndex(m => m.mealId === meal.mealId); 
-        if(!meal) {
-            return res.status(404).send({
-                success: 'false',
-                message: 'this meal does not exist'
-            });
-        }
+        Meal.findById(mealId)
+            .then(meal => {
+               if(!meal) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'this meal does not exist'
+                    });
+                }
+                
+                meal.update( req.body, {
+                     fields: Object.keys(req.body)
+                    }
+                )
+                .then(updatedMeal => {
+                    return res.status(200).json({
+                        updatedMeal,
+                        status: 'success',
+                        message: `meal with id ${updatedMeal.id} has been updated`
+                    });
+                })
+                .catch(error => {
+                    return res.status(500).json({
+                        status: 'error',
+                        message: 'Could not perform update operation'
+                    });
+                });
         
-        // update values
-        const updatedMeal = {            
-            mealId: meal.mealId,
-            name: req.body.name || meal.name,
-            description: req.body.description || meal.description,
-            price : parseInt(req.body.price, 10) || meal.price
-
-        };
-        // try using map 
-        meals.splice(mealIndex, 1 , updatedMeal);
-        return res.status(200).send({
-            updatedMeal,
-            success: 'true',
-            message: 'meal successfully updated',
-
         });
-
+        
     }
 
     /**
-     * @method removeMeal
-     * @param {object} req 
-     * @param {object} res 
+     * Removes an existing meal from the database
+     * @method
+     * @param {object} req Request object
+     * @param {object} res Response object
      */
-    static removeMeal(req, res) {
+    static async removeMeal(req, res) {
         // find meal 
-        const mealId = parseInt(req.params.mealId, 10);        
+        const mealId = parseInt(req.params.id, 10);        
 
-        const meal = meals.find(m => m.mealId === mealId);
-        const mealIndex = meals.findIndex(m => m.mealId === mealId);
+        // check that meal exists
+        const meal = await Meal.findById(mealId);          
 
         if(!meal) {
-            return res.status(404).send({
-                success:'false',
+            return res.status(404).json({
+                status: 'error',
                 message: 'this meal does not exist'
             });
         }
-        // else delete meal
-        const removedMeal = meals.splice(mealIndex , 1);
-        return res.status(200).send({ 
-            removedMeal:removedMeal[0],           
-            success:'true',
-            message:'meal successfully removed'
-        });
-
-    }  
-    
-    /**
-     * @returns {Object} meal 
-     * @param {*} req 
-     * @param {*} res 
-     */
-    static addMeal(req, res) {
+        await meal.destroy();
         
-        const {
-            name,
-            description, 
-            imageUrl, 
-            price
-        } = req.body;
-
-        if(!name || !description || !price) {
-
-            return res.status(400).json({
-                success: 'false',
-                message: 'the parameters supplied are incomplete'
-            });
-
+        return res.status(200).json({
+            status: 'success',
+            message: 'meal successfully deleted'
+        });                 
+   
+   
+    }
+    /**
+     * @returns Object indicating success or fsilure of add operation
+     * @param {object} req Request object containing meal fields
+     * @param {object} res Response object 
+     */
+    static async addMeal(req, res) {
+        
+        try{
+            const {
+                name,
+                description, 
+                imgUrl, 
+                price
+            } = req.body;
+    
+           const meal = await Meal.findOne({ where: { name } });
+           
+            if(meal) {
+                return res.status(400).json({
+                    status: 'Error',
+                    message: 'This meal already exists'
+                });
+            }
+            const newMeal = await Meal.create({
+                                            name,
+                                            description,
+                                            imgUrl,
+                                            price
+                                        });
+              
+            return res.status(201).json({
+                status: 'Success',
+                message:`Meal successfully added. MealId - ${newMeal.id}`,
+    
+            });             
+    
+        } catch(error) {
+            console.log(error.message);
+            return res.status(500).json({
+                err: error.stack
+             });
         }
-        // generate id
-        const meal = {
-            mealId: meals[meals.length - 1].mealId + 1,
-            name,
-            description,
-            imageUrl,
-            price
-        };
-
-        meals.push(meal);
-        return res.status(201).json({
-            success: 'true',
-            message: `meal with mealId ${meal.mealId} was successfully created`,
-            meal
-        });   
 
     }
 }
 
-export default Meal;
+export default MealController;
