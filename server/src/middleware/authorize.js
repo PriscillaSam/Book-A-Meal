@@ -17,7 +17,7 @@ import config from '../../config/config';
           id,          
           userTypeId
         };
-        const secretkey = config.secretKey || 'secret';
+        const secretkey = 'secret';
         const jwtData = {
             expiresIn: 86400
         };
@@ -42,7 +42,7 @@ const authorize = (req, res, next) => {
                 message: 'User not authenticated. No token provided'
             });
         }
-        const secretkey = config.secretKey || 'secret';
+        const secretkey = 'secret';
         const decoded = jwt.verify(token, secretKey);
         req.decoded = decoded;  
         next(); 
