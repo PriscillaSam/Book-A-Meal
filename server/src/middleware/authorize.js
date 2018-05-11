@@ -42,7 +42,7 @@ const authorize = (req, res, next) => {
                 message: 'User not authenticated. No token provided'
             });
         }
-        const secretkey = 'secret';
+        const secretKey = 'secret';
         const decoded = jwt.verify(token, secretKey);
         req.decoded = decoded;  
         next(); 
