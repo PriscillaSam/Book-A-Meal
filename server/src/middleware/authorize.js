@@ -17,12 +17,12 @@ import config from '../../config/config';
           id,          
           userTypeId
         };
-    
+        const secretkey = config.secretKey || 'secret';
         const jwtData = {
             expiresIn: 86400
         };
     
-        return jwt.sign(jwtPayload, config.secretKey, jwtData);        
+        return jwt.sign(jwtPayload, secretKey, jwtData);        
 
     };
 
@@ -42,8 +42,8 @@ const authorize = (req, res, next) => {
                 message: 'User not authenticated. No token provided'
             });
         }
-    
-        const decoded = jwt.verify(token, config.secretKey);
+        const secretkey = config.secretKey || 'secret';
+        const decoded = jwt.verify(token, secretKey);
         req.decoded = decoded;  
         next(); 
     }
