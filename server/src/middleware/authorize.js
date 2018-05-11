@@ -17,7 +17,7 @@ import config from '../../config/config';
           id,          
           userTypeId
         };
-        const secretkey = 'secret';
+        const secretKey = 'secret';
         const jwtData = {
             expiresIn: 86400
         };
