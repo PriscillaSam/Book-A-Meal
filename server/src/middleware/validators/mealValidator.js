@@ -19,7 +19,7 @@ const validateUpdateMeal = validate({
         body: {
             name: Joi.string(),
             description:Joi.string().trim(),
-            price: Joi.number().positive()
+            price: Joi.number().positive().min(100).max(5000)
         }
     });
 

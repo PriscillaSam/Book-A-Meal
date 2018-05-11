@@ -13,28 +13,33 @@ class MealController {
      * @param {object} req Request object
      * @param {object} res Response object
      */
-    static getMeals(req, res) {
+    static async getMeals(req, res) {
         
-        Meal.findAll()
-            .then(meals => {
-
-                if(!meals) {
-                    return res.status(400).json({
-                        status: 'error',
-                        message: ''
-                    });
-                }
-                return res.status(200).json({
-                    status: 'success',
-                    message: 'meals successfully gotten',
-                    meals 
-                });
+        try {
+        
+            const meals = await Meal.findAll({ attributes: ['id', 'name', 'description', 'price'] });
                 
-            })
-            .catch(err =>  res.status(500).json({
-                    error: err.stack,
-                })
-            );
+
+            if(!meals) {
+                return res.status(200).json({
+                    status: 'error',
+                    message: 'there are currently no meals in the system'
+                });
+            }
+            return res.status(200).json({
+                status: 'success',
+                message: 'meals successfully gotten',
+                meals 
+            });
+                    
+        }  catch(error) {
+            return res.status(500).json({
+                status: 'Error',
+                message: 'Ooops something happened'
+        });
+    }
+    
+               
     } 
     
 /**
@@ -44,38 +49,41 @@ class MealController {
  * @param {object} res 
  * @returns An Object with response status and message indicating update success
  */
-    static updateMeal(req , res) {
-        // get mealid
-        const mealId = parseInt(req.params.id, 10);
-        // Check that it is available
-        Meal.findById(mealId)
-            .then(meal => {
-               if(!meal) {
-                    return res.status(404).send({
-                        status: 'error',
-                        message: 'this meal does not exist'
-                    });
-                }
-                
-                meal.update( req.body, {
-                     fields: Object.keys(req.body)
-                    }
-                )
-                .then(updatedMeal => {
-                    return res.status(200).json({
-                        updatedMeal,
-                        status: 'success',
-                        message: `meal with id ${updatedMeal.id} has been updated`
-                    });
-                })
-                .catch(error => {
-                    return res.status(500).json({
-                        status: 'error',
-                        message: 'Could not perform update operation'
-                    });
-                });
+    static async updateMeal(req , res) {
+
+        try{
+
         
-        });
+            // get mealid
+            const mealId = parseInt(req.params.id, 10);
+            // Check that it is available
+            const meal = Meal.findById(mealId);
+            
+            if(!meal) {
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'this meal does not exist'
+                });
+            }
+            
+            const updatedMeal = meal.update( req.body, {
+                                     fields: Object.keys(req.body)
+                                });
+               
+            return res.status(200).json({
+                updatedMeal,
+                status: 'success',
+                message: `meal with id ${updatedMeal.id} has been updated`
+            });
+              
+               
+        
+        }  catch(error) {
+            return res.status(500).json({
+                status: 'error',
+                message: 'Could not perform update operation'
+            });
+        }
         
     }
 
@@ -86,24 +94,33 @@ class MealController {
      * @param {object} res Response object
      */
     static async removeMeal(req, res) {
-        // find meal 
-        const mealId = parseInt(req.params.id, 10);        
 
-        // check that meal exists
-        const meal = await Meal.findById(mealId);          
+        try{
+            // find meal 
+            const mealId = parseInt(req.params.id, 10);        
 
-        if(!meal) {
-            return res.status(404).json({
-                status: 'error',
-                message: 'this meal does not exist'
+            // check that meal exists
+            const meal = await Meal.findById(mealId);          
+
+            if(!meal) {
+                return res.status(404).json({
+                    status: 'error',
+                    message: 'this meal does not exist'
+                });
+            }
+            await meal.destroy();
+            
+            return res.status(200).json({
+                status: 'success',
+                message: 'meal successfully deleted'
+            });  
+        } catch(error) {
+            return res.status(500).json({
+                status:'Error',
+                message: 'Ooops something went wrong'
             });
         }
-        await meal.destroy();
-        
-        return res.status(200).json({
-            status: 'success',
-            message: 'meal successfully deleted'
-        });                 
+                     
    
    
     }
@@ -144,9 +161,9 @@ class MealController {
             });             
     
         } catch(error) {
-            console.log(error.message);
             return res.status(500).json({
-                err: error.stack
+                status: 'error',
+                message: 'something went wrong'
              });
         }
 

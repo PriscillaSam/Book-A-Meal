@@ -15,8 +15,31 @@ class MenuController {
      * @param {object} res Response Object
      */
     static async setMenu(req, res) {
+        try {
 
+        
        const { mealIds } = req.body;
+            
+       mealIds.forEach(id => {
+           if(typeof id !== 'number') {
+            return res.status(404).json({
+                status: 'Error',
+                message: 'This meal does not exist'
+            });
+           }
+           Meal.findOne({ where: { id }})
+                            .then(meal => {
+                                if(!meal) {
+                                    return res.status(404).json({
+                                        status: 'Error',
+                                        message: 'This meal does not exist'
+                                    });
+                                }
+                            });
+           
+           
+       });
+
        const date =  moment().format('MMMM Do YYYY');
 
        // check if a menu already exists. Check by date
@@ -40,7 +63,12 @@ class MenuController {
             status:'success',
             message:'Menu successfully added'
         });       
-            
+    } catch(error) {
+        return res.status(500).json({
+            status: 'Error',
+            message: 'Ooops!!! something happened'
+        });
+        }   
     }
 
     /**

@@ -19,8 +19,7 @@ class OrderController {
             const {            
                 userId,
                 mealId,
-                quantity,
-                amount,            
+                quantity,                            
             } = req.body;
     
             if(!userId || !mealId) {
@@ -38,6 +37,8 @@ class OrderController {
                         message: 'The menu for today has not been set yet. Please be patient'
                     });
                 }
+
+                
                 // check if user exists
                 const user = await User.findOne({ where: {id: userId}});
                 // check if meal exists
@@ -54,6 +55,7 @@ class OrderController {
                         message: 'This meal does not exist'
                     });
                 }
+                const amount = quantity * meal.price;
     
                 await Order.create({
                                 date,
@@ -70,8 +72,9 @@ class OrderController {
             });
         } catch(error) {
             res.status(500).json({
-                status: 'Error',
-                message: error.stack
+                error
+                // status: 'Error',
+                // message: 'Ooops!! something happened'
             });
         }
         
@@ -82,31 +85,37 @@ class OrderController {
      * @param {object} req 
      * @param {object} res 
      */
-    static updateOrder(req, res) {
+    static async updateOrder(req, res) {
 
-        const orderId = parseInt(req.params.orderId, 10);
+        try{
+            const orderId = parseInt(req.params.orderId, 10);
 
-        // check if order exists
-        const order = Order.findOne({ where:})
-        const order = orders.find(o => o.orderId === orderId);
-        const orderIndex = orders.findIndex(o => o.orderId === orderId);
+            // check if order exists
+            const order = await Order.findOne({ where: { id: orderId}});
+            if(!order) {
+                return res.status(404).json({
+                    status: 'Error',
+                    message:'This order does not exist'
+                });
+            }
+          
+           const updatedOrder = await order.update( req.body, {
+                                        fields: Object.keys(req.body)
+                                    });
 
-        if(!order) {
-            return res.status(404).send({
-                status:'error',
-                message:'this order does not exist'
+            return res.status(200).json({
+                status: 'success',
+                message: 'Order was successfully updated',
+                updatedOrder
+            });
+    
+        } catch(error) {
+            return res.status(500).json({
+                status: 'Error',
+                message: 'Ooops!!! something happened'
             });
         }
-
-        const updatedOrder = {
-            orderId, 
-            userId: req.body.userId || order.user.userId,
-            mealId: req.body.mealId || order.meal.mealId,
-            quantity: req.body.quantity || order.quantity,
-            amount: req.body.amount || order.amount
-        };
-
-        // remove former order and replace with the new
+        
       
 
 
@@ -117,25 +126,39 @@ class OrderController {
      * @param {object} req 
      * @param {object} res 
      */
-    static getTodayOrders(req, res) {
+    static async getTodayOrders(req, res) {
 
-        const date = '2018-3-14';
-
+        try{
+            const date = moment().format('MMMM Do YYYY');
         // filter through orders using this date
-        const todayOrders = orders.filter(o => o.date === date);
-        
-        if(todayOrders.length === 0) {                      
 
-            return res.status(204).send({
-                message:'there are no orders yet'
+        const orders = await Order.findAll({
+                            where: { date },
+                            include: [{
+                                model: Meal,
+                            }]
+                        });
+
+        if(!orders || orders.length === 0) {
+            return res.status(200).json({
+                status: 'success',
+                message: 'There are no orders for today'
             });
         }
 
-        return res.status(200).send({
-            status:'success',
-            message:'request successful. Orders succesfully gotten',
-            todayOrders,            
+        res.status(200).json({
+            status: 'success',
+            message: 'Your orders were gotten successfully',
+            orders
         });
+    } catch(error) {
+        res.status(500).json({
+            status: 'Error',
+            message: 'Ooops!! something went wrong'
+        });
+    }
+
+       
 
     }
     /**
@@ -143,35 +166,70 @@ class OrderController {
      * @param {object} req 
      * @param {object} res 
      */
-    static getUserOrders(req, res) {
-        const userId = parseInt(req.params.userId, 10);
+    static async getUserOrders(req, res) {
 
-        // get all orders with userId
-        const userOrders = orders.filter(o => o.user.userId === userId);
-        if(userOrders.length === 0) {
-            return res.status(204).send({
-                status:'no content',
-                message:'you currently have no orders to display'
+        try{
+            const userId = parseInt(req.params.userId, 10);
+
+            // get all orders with userId
+            const userOrders = await Order.findAll({ where: { userId }, include: [{ model: Meal }]});
+            if(!userOrders || userOrders.length === 0) {
+                return res.status(200).send({
+                    status:'success',
+                    message:'you currently have no orders to display'
+                });
+    
+            }
+    
+            return res.status(200).send({
+                status:'success',
+                message:'Orders successfully gotten',
+                userOrders
             });
 
+        } catch(error) {
+            return res.status(500).json({
+                status:'Error',
+                message: 'Ooops!! something went wrong'
+            });
         }
-
-        return res.status(200).send({
-            status:'success',
-            message:'Orders successfully gotten',
-            userOrders
-        });
+       
     }
     /**
      * @method getAllOrders
      * @param {object} req 
      * @param {object} res 
      */
-    static getAllOrders(req, res) {
+    static async getAllOrders(req, res) {
 
-        return res.status(200).send({
-            orders
-        });
+       try{
+            const allOrders = await Order.findAll({  
+                include: [{
+                     model: Meal,
+                     
+                }]});
+
+            if(!allOrders || allOrders.length === 0) {
+                return res.status(200).json({
+                    status: 'success',
+                    message: 'you currently have no orders to display'
+                });
+            }
+            
+            res.status(200).json({
+                status:'success',
+                message: 'Orders gotten successfully',
+                allOrders
+            });
+
+       } catch(error) {
+            res.status(200).json({
+                status:'success',
+                message: 'Ooops!! something went wrong',
+                
+            });      
+         }
+
     }
 
 }
